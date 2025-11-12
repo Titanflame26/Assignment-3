@@ -1,0 +1,32 @@
+# ------------------------
+# Core Web Framework
+# ------------------------
+fastapi
+uvicorn[standard]
+python-multipart
+aiofiles
+pydantic   # Pydantic v1 for FastAPI compatibility
+
+# ------------------------
+# Vector Search + NLP Stack
+# ------------------------
+faiss-cpu      # CPU build; use faiss-gpu if needed
+langchain
+numpy
+tqdm
+
+# ------------------------
+# OpenAI + LLM Integration
+# ------------------------
+
+ollama
+openai
+requests
+python-dotenv
+
+# ------------------------
+# Document Parsing
+# ------------------------
+PyPDF2
+
+
