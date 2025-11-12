@@ -1,0 +1,787 @@
+{
+  "0": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 0,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  1 MODULE -1: Data Communications & Networks  \n \n1. DATA COMMUNICATIONS  \nData communication is the process of transferring data from one point to another using a \ncommunication system. It involves  several essential components and mechanisms to ensure the \naccurate and timely delivery of data.  \n1.1. Components  \nA data communication system includes the following components:  \n \nFigure 1.1: A data communications system has five components  \n1. Message:  The data or information being communicated (e.g., text, images, audio).  \n2. Sender:  The device that sends the message, such as a computer or smartphone.  \n3. Receiver:  The device that receives the message, like another computer or a printer.  \n4. Transmission Medium:  The physical path through which the data is transmitted, like \ncables or radio waves.  \n5. Protocol:  A set of rules that governs the communication between devices to ensure proper \ndata exchange.",
+    "embedding_dim": 1024
+  },
+  "1": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 1,
+    "text": "cables or radio waves.  \n5. Protocol:  A set of rules that governs the communication between devices to ensure proper \ndata exchange.  \nThe performance of a data communication system relies on four key characteristics: delivery, \naccuracy, timeliness, and jitter.  \n1. Delivery : The system must ensure that data reaches the correct destination. Only the \nintended recipient —whether a device or a user —should receive the data.  \n2. Accuracy : Data must be transmitted with out errors. If data is altered during transmission \nand not corrected, it becomes unusable.  \n3. Timeliness : Data must be delivered promptly. Delayed data, especially in applications like \nvideo and audio, lose their value. For real -time transmission, data must b e delivered in the \nsame sequence and without significant delays.",
+    "embedding_dim": 1024
+  },
+  "2": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 2,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  2 4. Jitter : Jitter refers to the inconsistency in packet arrival times. Inconsistent delays, such as \nvideo packets arriving at varying intervals, can degrade the quality of the audio or video. \nFor instance, if video packets are sent every 30 ms, but some arrive after 40 ms, the video \nquality will be affected.  \n \n1.2. Data Representation  \nData can be represented in various forms to suit the type of communication. Common types of \ndata representation includ e: \n• Text: Represented as a sequence of bits using encoding systems like ASCII or Unicode.  \n• Numbers : Represented directly in binary form, which allows for efficient computation and \ntransmission.  \n• Images : Represented as a matrix of pixels, where each pixel is assigned a bit pattern based \non the image's color or intensity. Color images often use RGB (Red, Green, Blue) or YCM \n(Yellow, Cyan, Magenta) encoding.",
+    "embedding_dim": 1024
+  },
+  "3": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 3,
+    "text": "on the image's color or intensity. Color images often use RGB (Red, Green, Blue) or YCM \n(Yellow, Cyan, Magenta) encoding.  \n• Audio : Audio data is captured as a continuous signal, which can be sampled and digitized \nfor transmission . \n• Video : A sequence of images or frames is used to convey motion, with each frame \nrepresented as individual bit patterns.  \n \n1.3. Data Flow  \nData flow refers to the manner in which data is transmitted between two devices. It can happen \nin three modes:  \n1. Simplex : Data flows in one direction only, like a keyboard sending data to a computer \n(one-way communication).  \n2. Half -Duplex : Both devices can send and receive data, but not at the same time. For \nexample, a walkie -talkie allows communication in both directions, but o ne at a time.  \n3. Full-Duplex : Both devices can transmit and receive data simultaneously, like in a phone \nconversation where both parties can speak and listen at the same time.",
+    "embedding_dim": 1024
+  },
+  "4": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 4,
+    "text": "3. Full-Duplex : Both devices can transmit and receive data simultaneously, like in a phone \nconversation where both parties can speak and listen at the same time.  \nDr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  3  \nFigure 1.2: Data flow (simplex, half -duplex, and full -duplex)  \n2. NETWORKS  \nA network  refers to the interconnection of a set of devices capable of communication. These \ndevices can include hosts such as computers, smartphones, and security systems, as well as \nconnecting devices like routers, switches, and modems. Networks are connected thro ugh \ntransmission media, either wired (like cables) or wireless (like air).  \n2.1. Network Criteria  \nNetworks must meet several essential criteria to be effective, namely:  \n1. Performance : This is evaluated by:  \no Transit time : Time for a message to travel between two devices.  \no Response time : Time between sending a request and receiving a response. Factors",
+    "embedding_dim": 1024
+  },
+  "5": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 5,
+    "text": "1. Performance : This is evaluated by:  \no Transit time : Time for a message to travel between two devices.  \no Response time : Time between sending a request and receiving a response. Factors \ninfluencing performance include the number of users, the transmission medium, \nhardware capabilities, and software efficiency. Key metrics include:  \no Throughput : Amount o f data transmitted successfully.  \no Delay : Time taken for data to reach its destination. Optimizing both often leads to \ntrade -offs. \n2. Reliability : This includes:  \no Accuracy in data delivery.  \no Frequency and recovery time from network failures.  \no The network ’s ability  to function during a catastrophe.  \n3. Security : It encompasses protecting data from unauthorized access, damage, or corruption \nand establishing recovery procedures for security breaches.",
+    "embedding_dim": 1024
+  },
+  "6": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 6,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  4 2.2. Physical Structures  \nNetworks can be categorized by their connection typ es and topologies : \n1. Type of Connection : \no Point -to-Point : A direct link between two devices, providing the full capacity of \nthe link for communication (e.g., remote control to TV).  \no Multipoint (Multidrop) : Multiple devices share a single link, either spatially  \n(simultaneous use) or temporally (taking turns).   \n \nFigure 1.3: Types of connections: point -to-point and multipoint  \n2. Physical Topology : Refers to how devices are physically arranged in a network. Four main \ntopologies include:  \no Mesh Topology : \n▪ Every device is  connected to every other device, requiring n(n −1)/2  links \nfor n devices.   \n▪ Node 1 must be connected to n – 1 nodes, node 2 must be connected to n – \n1 nodes, and finally node n must be connected to n – 1 nodes. We need n (n \n– 1) physical links. However, if each physical link allows communication",
+    "embedding_dim": 1024
+  },
+  "7": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 7,
+    "text": "1 nodes, and finally node n must be connected to n – 1 nodes. We need n (n \n– 1) physical links. However, if each physical link allows communication \nin both directions (duplex mode), we can divide the number of links by 2. \nIn other words, we can say that in a mesh topology, we need n (n – 1) / 2 \nduplex -mode links.  \n▪ Advantages: Dedicated links, fault isolation, rob ust, secure.  \n▪ Disadvantages: Expensive, complex installation, excessive cabling.  \n▪ Example: Telephone networks between regional offices.",
+    "embedding_dim": 1024
+  },
+  "8": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 8,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  5  \nFigure 1.4 A fully connected mesh topology (five devices)  \n \no Star Topology : \n▪ Each device is connected to a central hub, which manages communication.  \n▪ Advantages: Easy installation and fault isolation; if a link fails, only that \ndevice is affected.  \n▪ Disadvantages: Entire system fails if the hub goes down.  \n▪ Common in local area networks (LANs).  \n \nFigure 1.5: A star topology connecting four stations  \no Bus Topology : \n▪ All devices are connected to a single backbone cable.  \n▪ Advantages: Easy installation, less cabling than mesh.  \n▪ Disadvantages: Difficult to add devices, faults in the backbone disrupt the \nentire network.  \n▪ Example: Early E thernet LANs.",
+    "embedding_dim": 1024
+  },
+  "9": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 9,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  6  \nFigure 1.6 : A bus topology connecting three stations  \no Ring Topology : \n▪ Devices are connected in a loop, with signals traveling in one direction \nthrough repeaters.  \n▪ Advantages: Easy to install, simple fault detection.  \n▪ Disadvantages: A break in t he ring can disable the entire network, though \ndual rings or switches can mitigate this.  \n▪ Example: IBM ’s Token Ring LANs.  \n \nFigure 1.7: A ring topology connecting six stations  \n \n3. NETWORK TYPES  \nWhich  is used to connect networks to form an internetwork (a network of networks).  \n3.1. Local Area Network (LAN)  \nA LAN is a network that connects computers and devices within a small geographical area, such \nas a home, office, or campus.  \n \nCharacteristics : \n• Covers a limited area.  \n• High data transfer rates (up to 10 Gbps).  \n• Typically owned and managed by a single organization.",
+    "embedding_dim": 1024
+  },
+  "10": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 10,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  7 Examples : Ethernet networks , Wi-Fi networks in homes and small offices.  \n \nFigure 1.8: An isolated LAN in the past and today  \nLAN Setup:  \n• Common Cable Connection : In the past, all hosts within a Local Area Network (LAN) \nwere connected via a single common cable.  \no Packet Transmission : When one host sent a packet to another, it was broadcast to \nall hosts on the network.  \no Packet Filtering : The intended recipient would accept the packet, while all other \nhosts would drop it.  \no Drawback : This method created significant network congestion, as every packet \nwas visible to all hosts, even when they weren't the intended recipient.  \nModern LAN Setup:  \n• Switch -Based LAN : Today, most LANs use smart switches  to handle packet d elivery.  \no Address Recognition : A switch is intelligent enough to recognize the destination \naddress of each packet.",
+    "embedding_dim": 1024
+  },
+  "11": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 11,
+    "text": "• Switch -Based LAN : Today, most LANs use smart switches  to handle packet d elivery.  \no Address Recognition : A switch is intelligent enough to recognize the destination \naddress of each packet.  \no Selective Packet Forwarding : Instead of broadcasting packets to all hosts, the \nswitch sends the packet directly to the destination host.  \no Benefits : \n▪ Reduced Traffic : Since packets are only sent to the intended recipient, \noverall network traffic is significantly reduced.  \n▪ Simultaneous Communication : More than one pair of hosts can \ncommunicate simultaneously as long as they have different source  and \ndestination addresses. This improves network efficiency.  \nLAN Capacity:  \n• Flexibility : The term \"LAN\" does not specify any constraints on the number of hosts. A \nLAN can accommodate a wide range of host numbers, depending on the network’s size \nand structure.",
+    "embedding_dim": 1024
+  },
+  "12": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 12,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  8 3.2. Wide Area Network (WAN)  \nA WAN covers a large geographical area, such as a city, country, or even globally. It connects \nmultiple LANs.  \nCharacteristics : \n• Slower data transfer rates than LANs.  \n• Often managed by multiple entities (e.g., ISPs, governments).  \n• Utilizes routers and public or private communication links.  \nExamples : The Internet itself is a WAN , Private networks connecting different company \nbranches.  \n \nA point -to-point WAN:  \n \n \nFigure 1.9 : A point -to-point WAN  \nA Point -to-Point WAN is a network that connects two communication devices directly via \ntransmission media, such as cables or wireless links.  This type of network allows data transmission \nbetween just two endpoints, ensuring a dedicated and private communication link.  Used by \nbusine sses to link branch offices or remote locations.  \nTransmission Media : \n• Cable : Examples include fiber optic, coaxial, or twisted -pair cables.",
+    "embedding_dim": 1024
+  },
+  "13": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 13,
+    "text": "busine sses to link branch offices or remote locations.  \nTransmission Media : \n• Cable : Examples include fiber optic, coaxial, or twisted -pair cables.  \n• Air: Wireless links like microwave or satellite connections.  \nAdvantages : \n• Dedicated Line : Since only two devices share  the link, there is minimal congestion and \nconsistent bandwidth.  \n• Security : Limited exposure to external devices reduces the risk of unauthorized access.  \nA switched WAN:  \nA switched Wide Area Network (WAN) is a network infrastructure with multiple endpoints that \nare interconnected. Unlike traditional point -to-point WANs, which only connect two endpoints, a \nswitched WAN allows for dynamic routing between several nodes through switches.",
+    "embedding_dim": 1024
+  },
+  "14": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 14,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  9 Role in Global Communication:  Switched WANs are fundamental in the backbone  of modern \nglobal communication systems, facilitating data transfer across vast geographical areas .  \n• A switched WAN is scalable and can connect many endpoints.  \n• The switches in the network are responsible for choosing the best path for data to travel.  \n• It is commonly used in large -scale, high -traffic networks like the internet.  \n \nFigure 1.10 : A switched WAN  \nInternetwork  \nIn modern networks, it's uncommon to find a LAN (Local Area Network) or WAN (Wide Area \nNetwork) operating independently. Instead, they are often connected. When two or more networks \nconnect, they form an internetwork, or internet.  \nFor example, imagine a company with offices on the east and west coasts. Each office has a LAN \nwhere employees can communicate within the office. To allow communica tion between employees",
+    "embedding_dim": 1024
+  },
+  "15": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 15,
+    "text": "For example, imagine a company with offices on the east and west coasts. Each office has a LAN \nwhere employees can communicate within the office. To allow communica tion between employees \nat both locations, the company leases a dedicated WAN connection from a service provider. This \nWAN links the two LANs, creating an internetwork, or a private internet. Now, employees from \nboth offices can communicate with each other  \n \n \nFigure 1.11 : An internetwork made of two LANs and one point -to-point WAN  \nA heterogeneous network  \nA heterogeneous network  is a system that connects various types of devices and network \narchitectures. The term \"heterogeneous\" signifies diversity in the types of networks, which may",
+    "embedding_dim": 1024
+  },
+  "16": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 16,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  10 include different hardware, operating systems, and communication protocols.  When combining \nWANs and LANs into a heterogeneous network, the WANs provide the backbone for long -distance \ncommunication, while the LANs allow for local connectivity . \n \n \nFigure 1.12 : A heterogeneous network made of four WANs and three LANs  \n3.3. Switching  \nSwitching is the process of forwarding data packets in a network from a source to a destination \nthrough intermediate devices called switches.  \nTypes of Switching : \n1. Circuit Switching : \nIn a circuit -switched network, a fixed connection (circuit) is always available between two devices,  \nlike telephones, and it can be activated or deactivated by the network switch.  \n \nFigure 1.13: A circuit -switched network",
+    "embedding_dim": 1024
+  },
+  "17": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 17,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  11 Example Figure 1.13  \n• The network consists of four telephones on each side, connected to a switch.  \n• When a call is made, the switch connects a phone on one side to a phone on the other side.  \n• A thick line connects the two switches, with enough capacity to support four simultaneous \nvoice calls. This line’s capacity is shared by all phone pairs.  \nTwo Scenarios:  \n1. All phones are in use:  Four people on one side are talking to four people on the other side, \nusing the full capacity of the line.  \n2. One phone in use:  Only one pair of phones is talking, using only one -quarter of the line’s \ncapacity.  \nDisadvantages:  A circuit -switched network is only eff icient when operating at full capacity. If \nfewer devices are active, the unused capacity leads to inefficiency.  The thick line needs four times \nthe capacity of a single voice line to prevent call failures when all phones are in use simultaneously.",
+    "embedding_dim": 1024
+  },
+  "18": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 18,
+    "text": "the capacity of a single voice line to prevent call failures when all phones are in use simultaneously.  \n2. Packet S witching : \nIn a computer network, communication between devices is carried out in blocks of data called \npackets , rather than as continuous streams, as seen in phone calls. These packets are independent \nunits, which makes it possible for network switches to store and forward them later if needed.  \nExample Figure 1.14  \nA packet -switched network where two sets of four computers are connected across two sites. In \nthis setup, a router queues the packets and sends them when the network is ready.  \n \nFigure 1.14: A packet -switched network  \nConsider a scenario where the thick line (the main connection) has twice the capacity of the smaller \ndata lines that connect computers to routers. If only two computers (one from each site) are \ncommunicating, the packets move withou t delay. However, if the thick line is busy and more",
+    "embedding_dim": 1024
+  },
+  "19": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 19,
+    "text": "data lines that connect computers to routers. If only two computers (one from each site) are \ncommunicating, the packets move withou t delay. However, if the thick line is busy and more \npackets arrive, they are queued and sent in order of arrival.",
+    "embedding_dim": 1024
+  },
+  "20": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 20,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  12 Disadvantages:  This demonstrates the efficiency of packet -switched networks over circuit -\nswitched networks. However, packet -switching can int roduce delays when network traffic is \nheavy.  \n3. Message Switching : \no Entire messages are stored and forwarded from one switch to another (obsolete in \nmodern networks).  \n3.4. The Internet  \nThe Internet is a global system of interconnected computer networks that use the TCP/IP \nprotocol to link billions of devices worldwide.  \nCharacteristics : \n• Decentralized: No central controlling entity.  \n• Based on TCP/IP for communication.  \n• Enables various services such as web browsing, email, file sharing, etc.  \nComponents : \n• Clients : Devices that request services from servers.  \n• Servers : Systems that provide resources and services to clients.  \n• Routers and switches : Devices that direct data traffic across the network.",
+    "embedding_dim": 1024
+  },
+  "21": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 21,
+    "text": "• Servers : Systems that provide resources and services to clients.  \n• Routers and switches : Devices that direct data traffic across the network.  \n• ISPs (Internet Service Providers) : Organizations that provide access to the Internet.  \n \nFigure 1.15: The Internet today",
+    "embedding_dim": 1024
+  },
+  "22": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 22,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  13 3.5. Accessing the Internet  \nMethods of Access : \n1. Dial-up: \no Connects to the Internet using a telephone line.  \no Low-speed, outdated method (up to 56 kbps).  \n2. DSL (Digital Subscriber Line) : \no Uses telephone lines but allows simultaneous voice and data transmission.  \no Faster than dial -up (up to 100 Mbps).  \n3. Cable : \no Uses cable television lines to provide high -speed Internet (up to 1 Gbps).  \n4. Fiber Optic : \no Uses light to transmit data through optical fibers.  \no Extremely high -speed (up to 10 Gbps and beyond).  \n5. Satellite : \no Provides Internet access via satellite communication, useful in remote areas.  \no Slower than fiber or cable but offers wide coverage.  \n6. Mobile Broadband : \no Wireless Internet access through cellular networks (3G, 4G, 5G).  \no Widely acc essible but may have data limits.  \n7. Wi-Fi Access : \n• Wireless local area networking technology that allows devices to access the",
+    "embedding_dim": 1024
+  },
+  "23": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 23,
+    "text": "o Widely acc essible but may have data limits.  \n7. Wi-Fi Access : \n• Wireless local area networking technology that allows devices to access the \nInternet within the range of a wireless router.  \n• Common in homes, offices, and public places.  \n \n4. PROTOCOL LAYERING  \nProtocol layering  is a design principle in computer networks where communication tasks are \nbroken down into multiple layers. Each layer performs a specific function, and the layers work \ntogether to enable communication between devices over a network.  \n4.1. Scenarios  \nFirst Scenari o: Simple Communication in One Layer  \n \nFigure 1.16: A single -layer protocol",
+    "embedding_dim": 1024
+  },
+  "24": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 24,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  14 In the first scenario, communication is straightforward and occurs in a single layer. Imagine Maria \nand Ann, who are neighbors and share many common interests. Their interaction happens face -to-\nface, in the same language, as depicted in Figure 1.16. Despit e its simplicity, certain rules govern \ntheir communication . \nSecond  Scenario: A three -layer protocol  \nIn this scenario, Ann is offered a promotion requiring her to relocate far from her friend Maria. \nDespite the distance, they wish to continue their communic ation to collaborate on an innovative \nproject for their future retirement business. To maintain the confidentiality of their exchange, they \ndecide to use a secure encryption/decryption technique. This technique ensures that their letters \nremain unreadable to unauthorized individuals.  \n \nFigure 1.17 A three -layer protocol",
+    "embedding_dim": 1024
+  },
+  "25": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 25,
+    "text": "decide to use a secure encryption/decryption technique. This technique ensures that their letters \nremain unreadable to unauthorized individuals.  \n \nFigure 1.17 A three -layer protocol  \nThe communication between Ann and Maria can be visualized as taking place in three distinct \nlayers:  \n1. Third Layer (Plaintext Creation):  Maria speaks to the third -layer machine, which listens \nand generates the plaintext (the original letter). This plaintext is then handed over to the \nsecond -layer machine.  \n2. Second Layer (Encryption/Decryption):  The second -layer machine encrypts the \nplaintext , creating ciphertext (the encrypted letter). This ciphertext is then passed to the \nfirst-layer machine.  \n3. First Layer (Mailing):  The first -layer machine puts the ciphertext in an envelope, adds \nthe sender's and receiver's addresses, and mails it.",
+    "embedding_dim": 1024
+  },
+  "26": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 26,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  15 Protocol layering is useful in various scenarios, such as:  \n• Data transmission  over the internet where multiple types of data (emails, videos, web \npages) are transmitted using different protocols at each layer.  \n• Device communication  between a computer and a printer, w here layered protocols \nmanage data transfer and error detection.  \n• Telecommunication systems , where layered protocols ensure voice signals are transmitted \nefficiently and correctly.  \n• Multimedia streaming , where protocols manage data buffering, synchronization , and \nerror correction to deliver seamless audio and video streams.  \nAdvantages of Protocol Layering:  \n1. Modularity:  Each layer is independent, allowing for changes in one layer without affecting \nothers. For example, if Ann and Maria decide that the encryption  needs to be upgraded, \nthey can replace only the second -layer machine without altering the other layers.",
+    "embedding_dim": 1024
+  },
+  "27": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 27,
+    "text": "others. For example, if Ann and Maria decide that the encryption  needs to be upgraded, \nthey can replace only the second -layer machine without altering the other layers.  \n2. Service Separation:  Protocol layering separates the services from their implementation. \nMaria could perform the tasks of the first layer herself if nee ded, as long as she provides \nthe required services.  \n3. Intermediate Systems:  In more complex networks, intermediate systems only need to \nhandle specific layers, making the overall system less complex and less expensive.  \nDisadvantages of Protocol Layering:  \n1. Complexity in Layer Integration:  While modularity offers flexibility, it can add \ncomplexity. A single machine performing all tasks could simplify the setup, but if there are \nissues, the entire system might need to be replaced rather than just one layer.  \n \n4.2. Principles of Protocol Layering  \nFirst Principle: Bidirectional Communication",
+    "embedding_dim": 1024
+  },
+  "28": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 28,
+    "text": "issues, the entire system might need to be replaced rather than just one layer.  \n \n4.2. Principles of Protocol Layering  \nFirst Principle: Bidirectional Communication  \nTo achieve bidirectional communication in protocol layering, each layer must be designed to \nhandle two complementary tasks, one for each direction of communication. For example:  \nThird Layer:  Responsible for listening in one direction and transmitting in the other.  \nSecond Layer:  Handles encryption in one direction and decryption in the other.  \nFirst Layer:  Manages sending and receiving mail.  \nDr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  16 Each layer must be capable of performing its specific function for both incoming and outgoing \ndata.  \nSecond Principle: Identical Objects  \nIn protocol layering, the objects processed by each layer at both communicating sites must be \nidentical. For instance:  \nLayer 3:  The object should be a plaintext letter at both sites.",
+    "embedding_dim": 1024
+  },
+  "29": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 29,
+    "text": "In protocol layering, the objects processed by each layer at both communicating sites must be \nidentical. For instance:  \nLayer 3:  The object should be a plaintext letter at both sites.  \nLayer 2:  The object should be a ciphertext letter at both sites.  \nLayer 1:  The object should be a piece of mail at both sites.  \nConsistency in the objects at each layer ensures proper communication and processing across \ndifferent layers . \n4.3. Logical Connections  \n \nFigure 1.18: Logical connection between peer layers  \nThis means there is communication from one layer to the next. Imagine that Maria and Ann view \neach layer as having a logical (or imaginary) connection that allows them to transmit  objects \ncreated at that layer. Understanding these logical connections will enhance your comprehension of \nlayering in data communication and networking.  \nIn a layered model, logical connections  refer to virtual connections established between the same \nlayers in different devices. For example:",
+    "embedding_dim": 1024
+  },
+  "30": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 30,
+    "text": "layering in data communication and networking.  \nIn a layered model, logical connections  refer to virtual connections established between the same \nlayers in different devices. For example:  \n• The application layers of two computers communicate as though they are directly \nconnected, even though physical transmission occurs across multiple lower layers.  \n• Logical connections provide the abstraction necessary to  hide the complexities of the \nunderlying transmission methods, giving the appearance that communication occurs at a \nsingle layer.",
+    "embedding_dim": 1024
+  },
+  "31": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 31,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  17 Logical connections ensure that communication protocols at each layer, such as TCP (Transport \nLayer) or HTTP (Application Laye r), interact correctly without the user needing to understand the \nintricacies of network transmission.  \n \n5. TCP/IP PROTOCOL SUITE  \nTCP/IP is the protocol suite widely used for communication on the Internet today. It is a collection \nof protocols organized into different layers, where each layer handles specific tasks, making it \neasier to manage complex communication processes.  TCP/IP is a hierarchical protocol , meaning \nthat each higher -level protocol depends on the services provided by one or more lower -level \nprotocols. This layered structure ensures efficient and organized communication across networks.  \nHowever, today, it is more commonly represented as a five-layer model . These layers work \ntogether to ensure smooth data transmission over the network.  \n5.1. Layered Ar chitecture",
+    "embedding_dim": 1024
+  },
+  "32": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 32,
+    "text": "However, today, it is more commonly represented as a five-layer model . These layers work \ntogether to ensure smooth data transmission over the network.  \n5.1. Layered Ar chitecture  \nTo understand how the layers in the TCP/IP protocol suite work during communication between \ntwo hosts, let's consider a small network composed of three local area networks (LANs), each \nconnected by a link -layer switch. These LANs are also inter connected through a router. Figure \n1.20 illustrates this setup.  \n \nFigure 1.19: Layers in the TCP/IP protocol suite  \nIn this scenario, imagine that Host A  (the source) communicates with Host B  (the destination). \nThe communication process involves five devices:  \n1. Source Host (Computer A)  \n2. Link -layer switch in LAN 1  \n3. Router  \n4. Link -layer switch in LAN 2  \n5. Destination Host (Computer B)",
+    "embedding_dim": 1024
+  },
+  "33": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 33,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  18  \n \nFigure 1.20:  Communication through an internet  \nEach of these devices  operates at different layers of the TCP/IP protocol stack, depending on its \nrole in the network:  \n1. Hosts (Source and Destination)  \nBoth Host A  and Host B  are involved in all five layers of the TCP/IP model:  \n• Application Layer : The source host (Host A) crea tes a message at the application layer \nand sends it down through the stack.  \n• Transport Layer : The message is passed to the transport layer, which ensures reliable \ndelivery.  \n• Network Layer : At the network layer, the message is encapsulated into packets for \ntransmission across the network.  \n• Data Link Layer : The packets are then prepared for transmission over the physical \nnetwork in the data -link layer.  \n• Physical Layer : Finally, the message is sent through the physical medium (wires, cables, \netc.) to reach the des tination host.",
+    "embedding_dim": 1024
+  },
+  "34": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 34,
+    "text": "network in the data -link layer.  \n• Physical Layer : Finally, the message is sent through the physical medium (wires, cables, \netc.) to reach the des tination host.  \nAt the destination, Host B  receives the message at the physical layer and passes it up through the \nlayers until it reaches the application layer for processing.  \n2. Router  \nA router  plays a different role and operates at three layers of the TC P/IP model:",
+    "embedding_dim": 1024
+  },
+  "35": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 35,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  19 • Network Layer : The router’s primary function is routing packets across networks. It \nforwards packets based on their destination IP address.  \n• Data Link Layer & Physical Layer : A router is connected to multiple links, and each link \nmay use a diffe rent data -link and physical -layer protocol. For instance, if a packet arrives \nfrom LAN 1  (Link 1) using one set of protocols, the router must handle it and forward it to \nLAN 2  (Link 2) using another set of protocols.  \nImportantly, the router does not deal with the transport or application layers, as its role is solely to \nmove packets between networks.  \n3. Link -Layer Switch  \nA link-layer switch  operates only at the data -link and physical layers:  \n• Data Link Layer : The switch processes the data frames and ensures  they are forwarded to \nthe correct device within the same LAN.  \n• Physical Layer : The switch forwards the data through the physical medium.",
+    "embedding_dim": 1024
+  },
+  "36": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 36,
+    "text": "the correct device within the same LAN.  \n• Physical Layer : The switch forwards the data through the physical medium.  \nUnlike routers, link -layer switches do not need to handle different sets of protocols for different \nlinks. They operate  within a single LAN, using a single protocol set for the data -link and physical \nlayers.  \n5.2. Layers in the TCP/IP Protocol Suite  \nTCP/IP protocol suite functions and responsibilities of each layer.  \nUnderstanding the Logical Connections Between Layers  \nTo grasp the role of each layer, it's helpful to visualize the logical connections  between them. \nFigure 1.21 in the book illustrates these connections in a simple internet model.  \n• End-to-End vs. Hop -to-Hop Duties:  \no The application, transport, and network lay ers are responsible for end-to-end \ncommunication, meaning they manage data from one end device to the other \nacross the network.  \no The data -link and physical layers , on the other hand, handle communication on",
+    "embedding_dim": 1024
+  },
+  "37": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 37,
+    "text": "communication, meaning they manage data from one end device to the other \nacross the network.  \no The data -link and physical layers , on the other hand, handle communication on \na hop-to-hop basis, where each \"hop\" refers to a h ost or router.  \nThis distinction is key: the top three layers operate across the entire internet, while the lower two \nlayers manage communication on individual network segments or \"links.\"  \nData Units and Layer Responsibilities  \nAnother important way to understand these connections is by considering the data units  created \nat each layer.  \nDr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  20 • In the top three layers , the data units (referred to as packets) are not modified  by routers \nor link -layer switches.  \n• In the bottom two layers , how ever, the packet created by the host can be modified by \nrouters but not by link -layer switches.  \n \n \nFigure 1.21: Logical connections between layers of the TCP/IP protocol suite",
+    "embedding_dim": 1024
+  },
+  "38": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 38,
+    "text": "routers but not by link -layer switches.  \n \n \nFigure 1.21: Logical connections between layers of the TCP/IP protocol suite  \nFigure 1.22 shows a second principle of protocol layering: identical objects exist below each \nlayer for connected devices.  \n• At the network layer , even though there's a logical connection between two hosts, a \nrouter might fragment packets into smaller units.  \n• The link b etween two hops does not alter these packets.  \nThis layering approach allows for a structured, predictable method of managing data as it moves \nacross the network.  \n \nFigure 1.22: Identical objects in the TCP/IP protocol suite",
+    "embedding_dim": 1024
+  },
+  "39": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 39,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  21 5.3. Description of Each Layer  \nPhys ical Layer : \nRole of the Physical Layer:  \n• The physical layer focuses on transmitting the bits from the data -link layer as electrical or \noptical signals over a physical medium (such as cables or wireless channels).  \n• It converts bits from the data -link layer into signals that can travel through the medium \nconnecting the devices.  \nTransmission Media:  \n• The physical connection between two devices is made through a transmission medium, \nwhich can be either cables  (like twisted -pair, fiber -optic cables) or air (wirele ss \ncommunication).  \n• The transmission medium  does not directly carry bits; instead, it transmits signals  \n(electrical or optical) that represent the bits.  \nLogical Communication:  \n• Despite being the lowest layer, the physical layer enables logical communication  between \ndevices by ensuring that signals are accurately transmitted and interpreted.",
+    "embedding_dim": 1024
+  },
+  "40": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 40,
+    "text": "Logical Communication:  \n• Despite being the lowest layer, the physical layer enables logical communication  between \ndevices by ensuring that signals are accurately transmitted and interpreted.  \n• From a logical perspective, the unit of data at this layer is the bit, even though the actual \nsignals sent over the medium are different in nature.  \nSignal Transformation:  \n• The physical layer converts bits into appropriate forms of signals (either electrical or \noptical) depending on the medium used.  \n• Protocols at this layer define how these bits are transformed into signals to be carried over \nthe medium.  \nData -link Layer:  \nIn an  internet, multiple links (LANs and WANs) are connected by routers. There are often multiple \npaths that a datagram can take from the host to its destination. Routers are responsible for \ndetermining the most efficient route. Once the next link is chosen by a router, the data -link layer",
+    "embedding_dim": 1024
+  },
+  "41": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 41,
+    "text": "paths that a datagram can take from the host to its destination. Routers are responsible for \ndetermining the most efficient route. Once the next link is chosen by a router, the data -link layer  \nmanages the process of transmitting the datagram across that link.  \nThese links can vary widely and include:  \n• Wired LANs with link -layer switches  \n• Wireless LANs  \n• Wired WANs  \n• Wireless WANs  \nDr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  22 Each type of link may use different protocols, but the data -link layer  has the essential role of \nensuring that the packet is successfully transmitted across any type of link.  \nThe TCP/IP model  does not mandate a specific protocol for the data -link layer. In stead, it \naccommodates a wide range of both standard and proprietary protocols. Any protocol that can \nencapsulate a datagram and move it across a link is considered acceptable.  \nAt the data -link layer, the datagram is encapsulated into a packet, referred to  as a frame .",
+    "embedding_dim": 1024
+  },
+  "42": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 42,
+    "text": "encapsulate a datagram and move it across a link is considered acceptable.  \nAt the data -link layer, the datagram is encapsulated into a packet, referred to  as a frame . \n• Some  link-layer protocols offer both error detection and correction , ensuring that \ntransmitted data is free from errors.  \nNetwork Layer:  \nThe network layer is crucial for establishing communication between the source and destination \ncomputers. It manages host-to-host communication  across multiple devices (routers) in the path. \nEach router ensures that packets are directed along the most effi cient route. The main role of the \nnetwork layer is to enable communication between hosts and determine the best path for data \ntransmission.  \nInternet Protocol (IP)  \nThe primary protocol of the network layer is the Internet Protocol (IP) , which defines the \nstructure and format of data packets, known as datagrams  at this level. IP also determines the",
+    "embedding_dim": 1024
+  },
+  "43": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 43,
+    "text": "The primary protocol of the network layer is the Internet Protocol (IP) , which defines the \nstructure and format of data packets, known as datagrams  at this level. IP also determines the \naddressing system, ensuring each packet is sent from its source to its destination. The forwarding \nof packets from router to router is a fundamental part of IP's f unction.  \n• Connectionless Protocol : IP is connectionless, meaning it does not manage flow control, \nerror control, or congestion control. These features are handled by the transport layer if \nneeded by an application.  \n• Routing Protocols : While IP is responsible  for actual routing, protocols like unicast  (one-\nto-one) and multicast  (one-to-many) create forwarding tables to assist routers with routing \ndecisions.  \nAuxiliary Protocols Supporting IP  \nSeveral additional protocols work alongside IP to assist in the routin g and delivery process:",
+    "embedding_dim": 1024
+  },
+  "44": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 44,
+    "text": "decisions.  \nAuxiliary Protocols Supporting IP  \nSeveral additional protocols work alongside IP to assist in the routin g and delivery process:  \n• ICMP (Internet Control Message Protocol) : Helps IP report issues encountered during \npacket routing.  \n• IGMP (Internet Group Management Protocol) : Supports IP with multicast \ncommunication.  \n• DHCP (Dynamic Host Configuration Protocol) : Assigns network -layer addresses to \nhosts.  \n• ARP (Address Resolution Protocol) : Converts a network -layer address into a link -layer \naddress for communication with a specific host or router.  \nDr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  23 These protocols ensure efficient routing and network management, enabl ing seamless host -to-host \ncommunication in complex networks.  \nTransport Layer :  \nThe Transport Layer  plays a crucial role in ensuring end-to-end communication between hosts  \nin a network. It handles the transfer of data between the application layer on one device and the",
+    "embedding_dim": 1024
+  },
+  "45": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 45,
+    "text": "The Transport Layer  plays a crucial role in ensuring end-to-end communication between hosts  \nin a network. It handles the transfer of data between the application layer on one device and the \ncorresponding application layer on another device, making sure that messages are transmitted \nreliably and efficiently.  \nKey Functions:  \n• Encapsulation and Trans mission : The transport layer at the source host takes messages \nfrom the application layer, encapsulates them into transport layer packets (called segments  \nin TCP or user datagrams  in UDP), and transmits them to the destination transport layer.  \n• End-to-End C ommunication : Even though the application layer provides an end -to-end \nconnection, the transport layer separates tasks, handling data transmission independently \nfrom the application. This separation allows flexibility by providing multiple protocols \nsuited  for different needs.  \nProtocols in the Transport Layer:  \n1. Transmission Control Protocol (TCP) :",
+    "embedding_dim": 1024
+  },
+  "46": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 46,
+    "text": "from the application. This separation allows flexibility by providing multiple protocols \nsuited  for different needs.  \nProtocols in the Transport Layer:  \n1. Transmission Control Protocol (TCP) : \no Connection -Oriented : TCP establishes a connection between two hosts before \ntransferring data. It creates a virtual \"pipe\" for sending a continuous stream of bytes.  \no Flow Control : Ensures that the data sent matches the receiving capability of the \ndestination, preventing data loss due to overwhelming the receiver.  \no Error Control : TCP checks for errors in data transmission and ensures that any \ncorrupted segments are retr ansmitted.  \no Congestion Control : Helps avoid network congestion by adjusting the \ntransmission rate based on the current network conditions.  \n2. User Datagram Protocol (UDP) : \no Connectionless : Unlike TCP, UDP does not establish a connection before sending \ndata. Each user datagram is sent independently, without reference to previous or",
+    "embedding_dim": 1024
+  },
+  "47": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 47,
+    "text": "2. User Datagram Protocol (UDP) : \no Connectionless : Unlike TCP, UDP does not establish a connection before sending \ndata. Each user datagram is sent independently, without reference to previous or \nsubsequent datagrams.  \no Simplicity : UDP is lightweight, with minimal overhead. However, it does not \nprovide flow control, error control, or congestion control.  \no Use Case : Best suited f or applications that need to send small, independent \nmessages, where speed is critical and retransmission (as in TCP) would be \ninefficient.  \n3. Stream Control Transmission Protocol (SCTP) : \no Designed for Modern Applications : SCTP is tailored for emerging multime dia \napplications, offering more advanced features suited to high -demand data \ntransmissions.  \nDr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  24 By providing these different protocols, the transport layer allows application programs to choose",
+    "embedding_dim": 1024
+  },
+  "48": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 48,
+    "text": "transmissions.  \nDr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  24 By providing these different protocols, the transport layer allows application programs to choose \nthe one that best suits their specific requirements, whether they prioritize reliability, simplicity, or \nspeed.  \nApplication Layer:  \nThe application layer in a network facilitates end -to-end communication between two application \nlayers. It appears as though a direct bridge exists between them, but in reality, communicatio n \npasses through all layers of the networking model.  \nAt this layer, the communication happens between two processes (programs running on separate \nmachines). One process sends a request, and the other process responds. This process -to-process \ncommunication is the core responsibility of the application layer. While many predefined protocols \nexist at this level, users can also create their own custom processes to communicate across hosts.  \nKey protocols in the application layer include:",
+    "embedding_dim": 1024
+  },
+  "49": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 49,
+    "text": "exist at this level, users can also create their own custom processes to communicate across hosts.  \nKey protocols in the application layer include:  \n• HTTP (Hypertext Transfer  Protocol) : Used for accessing the World Wide Web \n(WWW).  \n• SMTP (Simple Mail Transfer Protocol) : The primary protocol for sending and receiving \nemail.  \n• FTP (File Transfer Protocol) : Enables the transfer of files between hosts.  \n• TELNET and SSH (Secure Shell) : Facilitate remote access to a site.  \n• SNMP (Simple Network Management Protocol) : Allows administrators to manage \nInternet resources both globally and locally.  \n• DNS (Domain Name System) : Helps find the network -layer address (IP address) of a \ncomputer for other protocols.  \n• IGMP (Internet Group Management Protocol) : Collects information on group \nmembership for multicast communication.  \n5.4. Encapsulation and Decapsulation  \nEncapsulation and decapsulation are key concepts in protocol layering within the Internet. These",
+    "embedding_dim": 1024
+  },
+  "50": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 50,
+    "text": "membership for multicast communication.  \n5.4. Encapsulation and Decapsulation  \nEncapsulation and decapsulation are key concepts in protocol layering within the Internet. These \nprocesses occur at both the source and destination hosts, as well as at intermediary devices like \nrouters.  \nI. Encapsulation at the Source Host  \nAt the source host, the encapsulation process involves the following steps:  \n1. Application Layer : The data generated by the application is called a message . This \nmessage typically doesn't have a header or trailer, but if it does, the whole unit is still \nreferred to as a message. This message is passed to the transport layer.  \n2. Transport Layer : The tran sport layer treats the message as a payload. It adds a transport \nlayer header, which includes details like the source and destination application program \nidentifiers and information necessary for tasks such as flow control, error control, or",
+    "embedding_dim": 1024
+  },
+  "51": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 51,
+    "text": "layer header, which includes details like the source and destination application program \nidentifiers and information necessary for tasks such as flow control, error control, or \nDr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  25 congestion con trol. The resulting packet is known as a segment  (in TCP) or a user datagram  \n(in UDP). This transport layer packet is then passed to the network layer.  \n3. Network Layer : At this layer, the transport layer packet is treated as the payload. A \nnetwork layer head er is added, which contains the source and destination IP addresses, as \nwell as additional information for error checking and fragmentation. The final packet is \nreferred to as a datagram , which is then passed to the data -link layer.  \n4. Data -Link Layer : The ne twork layer packet is encapsulated in a data -link layer frame. A \nheader is added here, which includes the addresses of the sending host and the next hop",
+    "embedding_dim": 1024
+  },
+  "52": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 52,
+    "text": "4. Data -Link Layer : The ne twork layer packet is encapsulated in a data -link layer frame. A \nheader is added here, which includes the addresses of the sending host and the next hop \n(e.g., a router). The frame is then passed to the physical layer for transmission over the \nnetwork.  \n \nFigure 1.23: Encapsulation/Decapsulation  \nII. Encapsulation and Decapsulation at the Router  \nRouters perform both encapsulation and decapsulation, as they are connected to multiple network \nlinks. Here's how this works:  \n1. Decapsulation at Data -Link Layer : When the r outer receives a frame, the data -link layer \nextracts the datagram  from the frame and passes it to the network layer.  \n2. Network Layer Processing : The router's network layer examines the source and \ndestination addresses within the datagram header. Using its fo rwarding table, the router \ndetermines the next hop for the datagram. The content of the datagram is not altered unless",
+    "embedding_dim": 1024
+  },
+  "53": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 53,
+    "text": "destination addresses within the datagram header. Using its fo rwarding table, the router \ndetermines the next hop for the datagram. The content of the datagram is not altered unless \nit requires fragmentation to pass through the next link. Once processed, the datagram is \npassed to the data -link layer of the next link.  \n3. Encapsulation at Data -Link Layer : The datagram is encapsulated into a new frame \nsuitable for the next link, and the frame is passed to the physical layer for transmission.",
+    "embedding_dim": 1024
+  },
+  "54": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 54,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  26 III. Decapsulation at the Destination Host  \nAt the destination host, the reverse process of encapsulation —decapsulation —occurs:  \n1. Data -Link Layer : The frame is received, and the data -link layer removes its header to \nextract the network layer datagram . \n2. Network Layer : The network layer removes its header to extract the transport layer \nsegment  or user datagram . \n3. Transport Layer : The transport layer removes its header to deliver the original message  \nto the application layer.  \nDuring decapsulation, error checking is performed at each layer to ensure data integrity. The \nprocess continues until the origin al message reaches the application layer, where it can be used by \nthe application program.  \n \n5.5. Addressing in Network  \nIn the context of the Internet and network protocol layering, addressing  is a key concept that",
+    "embedding_dim": 1024
+  },
+  "55": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 55,
+    "text": "the application program.  \n \n5.5. Addressing in Network  \nIn the context of the Internet and network protocol layering, addressing  is a key concept that \nensures logical communication between pairs of layers. For any communication between two \nparties, there must be two essential addresses: a source address  and a destination address . \nAlthough it might seem like each layer of the protoc ol model would require a separate pair of \naddresses, in practice only four are needed, as the physical layer  does not use addresses. The \nphysical layer deals with bits, and individual bits do not have addresses.  \nAddressing at Different Layers  \nEach layer in  the protocol stack uses specific types of addresses, which relate to the type of \ncommunication and the name of the data unit used at that layer. Here's a breakdown:  \n1. Application Layer : \no At this layer, addresses are typically names , such as a domain name (e. g.,",
+    "embedding_dim": 1024
+  },
+  "56": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 56,
+    "text": "communication and the name of the data unit used at that layer. Here's a breakdown:  \n1. Application Layer : \no At this layer, addresses are typically names , such as a domain name (e. g., \nsomeorg.com) or an email address (e.g., somebody@coldmail.com). These names \nrepresent the service or resource being accessed.  \no Packet name : Message . \n2. Transport Layer : \no Addresses here are called port numbers . Port numbers identify the specific \napplication -layer programs (e.g., web server -Port 80 , email client  - Port 25 ) on the \nsource and destination devices. Each running program has its own port number, \nensuring that data reaches the correct application.  \no Packet name : Segment  (for TCP) or User Da tagram  (for UDP).  \nDr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  27  \nFigure 1.24: Addressing in the TCP/IP protocol suite  \n3. Network Layer : \no The network layer uses global addresses , which are known as IP addresses",
+    "embedding_dim": 1024
+  },
+  "57": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 57,
+    "text": "Figure 1.24: Addressing in the TCP/IP protocol suite  \n3. Network Layer : \no The network layer uses global addresses , which are known as IP addresses  \n(45.113.122.159 ). These uniquely identify a device's connection to the Internet and \nallow data to be routed across networks.  \no Packet name : Datagram . \n4. Link Layer : \no At this layer, link-layer addresses  (also known as MAC addresses  78-45-C4-29-\n17-E8) are used. These are local addresses that uniquely identify specific devices \non a network (such as a LAN or WAN), ensuring that data reaches the correct \nphysical machine.  \no Packet name : Frame . \n5.6. Multiplexing and Demultiplexing  \nIn the TCP/IP protocol suite, multiplexing and demultiplexing are essential concepts for managing \ndata flow between different layers of the protocol stack.  \n \nFigure 1.25: Multiplexing and demultiplexing",
+    "embedding_dim": 1024
+  },
+  "58": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 58,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  28 Multiplexing at the Source:  Multiplexing occurs when a protocol at a certain layer can handle \nmultiple types of data from higher layers. For example, at the transport layer, protocols like TCP \nand UDP can receive messages from various application -layer protocols (such as FTP, HTTP, \nDNS, and SNMP). The transport layer encapsulates these messages into segments and adds a \nheader field to indicate which application -layer protocol the data belongs to.  \nDemultiplexing at the Destination:  Demultiplexing happens at the destination when a prot ocol \nneeds to deliver the data to the appropriate higher -layer protocol. At the transport layer, TCP or \nUDP will examine the header to determine which application -layer protocol should receive the \ndata. Similarly, at the network layer, IP can handle segmen ts from TCP or datagrams from UDP,",
+    "embedding_dim": 1024
+  },
+  "59": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 59,
+    "text": "UDP will examine the header to determine which application -layer protocol should receive the \ndata. Similarly, at the network layer, IP can handle segmen ts from TCP or datagrams from UDP, \nand it can also process packets from other protocols like ICMP or IGMP. At the data -link layer, a \nframe may carry payloads from various protocols, such as IP or ARP.  \nIllustration:  \n• At the Transport Layer:  UDP or TCP encaps ulates data from application -layer protocols \n(e.g., FTP, HTTP, DNS, SNMP).  \n• At the Network Layer:  IP handles segments from TCP, datagrams from UDP, and packets \nfrom other protocols.  \n• At the Data -Link Layer:  Frames may include payloads from IP or other protoc ols like \nARP.  \n6. TRANSMISSION MEDIA  \nTransmission media are essentially the physical substances through which information travels. \nThey operate at a level below the physical layer of the OSI model, often referred to as \"layer zero.\"",
+    "embedding_dim": 1024
+  },
+  "60": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 60,
+    "text": "Transmission media are essentially the physical substances through which information travels. \nThey operate at a level below the physical layer of the OSI model, often referred to as \"layer zero.\" \nEssentially, transmission media can be considered as a fundamental layer that directly interfaces \nwith the physical layer.  \n \nFigure 1.26: Transmission medium and physical layer  \nData Communications Examples:  \n• Transmission media include free space, metallic cables, or fiber -optic cables.  \n• The information transmitted is usually in the form of signals generated from data.",
+    "embedding_dim": 1024
+  },
+  "61": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 61,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  29 • Improved Metallic Media:  Development of twisted -pair and coaxial cables has enhanced data \ntransmission.  \n• Optical Fibers:  The advent of fiber -optic cables has significantly increased data \ntransmission rates.  \n• Efficient Use of Free Space:  Adva nces in modulation and multiplexing have optimized \nthe use of free space (air, vacuum, water) for communication.  \nElectromagnetic Spectrum:  \n• Signals and Electromagnetic Energy:  Computers and telecommunication devices \ntransmit data as electromagnetic energy, which includes power, radio waves, infrared, \nvisible light, ultraviolet light, and X -rays.  \n• Spectrum Usability:  Not all parts of the electromagnetic spectrum are suitable for \ntelecommunications. Only certain portions are used, and the types of media to harn ess these \nare limited.  \nCategories of Transmission Media:",
+    "embedding_dim": 1024
+  },
+  "62": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 62,
+    "text": "telecommunications. Only certain portions are used, and the types of media to harn ess these \nare limited.  \nCategories of Transmission Media:  \n1. Guided Media:  These include twisted -pair cables, coaxial cables, and fiber -optic cables.  \n2. Unguided Media:  This refers to free space, such as air and vacuum.  \n \nFigure 1.27: Classes of transmission media  \n \n \n➢ Telegraph (19th Century):  Invented by Morse, it was an early long -distance \ncommunication technology using metallic wires, but was slow.  \n➢ Telephone (1869):  Allowed voice transmission over long distances via metallic cables, \nthough communication quality was poor due to inferior wires.  \n➢ Wireless Communication (1895):  Hertz transmitted high -frequency signals, and Marconi \nlater improved this by sending messages across the  Atlantic Ocean.  \nDr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  30 6.1. Guided Media   \nGuided media are types of communication channels that provide a specific path for signals to travel",
+    "embedding_dim": 1024
+  },
+  "63": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 63,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  30 6.1. Guided Media   \nGuided media are types of communication channels that provide a specific path for signals to travel \nfrom one device to another. These include:  \n1. Twisted -Pair Cable : This type of cable consists of pairs of insulated copper wires twisted \ntogether. The twisting helps reduce electromagnetic interference and maintains signal \nquality.  \n2. Coaxial Cable : Coaxial cables have a central conductor, an insulating layer, a metallic \nshield, and an outer insulating layer. This structure helps to protect th e signal from \ninterference and allows for high -speed data transmission.  \n3. Fiber -Optic Cable : Unlike twisted -pair and coaxial cables, fiber -optic cables use light \nsignals to transmit data. They consist of thin strands of glass or plastic that carry light puls es \nover long distances with minimal signal loss.  \n6.2. Twisted -Pair Cable",
+    "embedding_dim": 1024
+  },
+  "64": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 64,
+    "text": "signals to transmit data. They consist of thin strands of glass or plastic that carry light puls es \nover long distances with minimal signal loss.  \n6.2. Twisted -Pair Cable  \nA twisted pair cable consists of two insulated copper conductors twisted together. Each wire in the \npair serves a different function: one carries the signal to the receiver, and the other  acts as a ground \nreference. The receiver processes the difference between the two wires to retrieve the signal.  \n \nFigure 1.28: Twisted -pair cable  \nNoise and Interference  \nTwisted pair cables are designed to minimize the impact of interference (noise) and crosstalk. \nWhen the wires are parallel, noise or crosstalk can affect each wire differently due to their varying \ndistances from the sources of interference. By twisting the wires, the cable maintains a balance. In \neach twist, the relative positions of the wires to the noise source change, helping to ensure that",
+    "embedding_dim": 1024
+  },
+  "65": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 65,
+    "text": "each twist, the relative positions of the wires to the noise source change, helping to ensure that \nboth wires experience similar levels of interference. This twisting reduces the impact of unwanted \nsignals, as the receiver calculates the difference between the wires, canceling out most of the nois e. \nShielded vs. Unshielded Twisted -Pair Cables  \n• Unshielded Twisted -Pair (UTP):  The most common type used in communications, UTP \ncables do not have additional shielding. They are less expensive and less bulky but can be \nmore susceptible to interference.  \n• Shielded Twisted -Pair (STP):  STP cables have an additional metal foil or braided mesh \ncovering each pair of conductors. This shielding reduces interference and improves signal",
+    "embedding_dim": 1024
+  },
+  "66": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 66,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  31 quality but makes the cables bulkier and more costly. STP is primarily used by I BM and is \nless common outside of their applications.  \n \nFigure 1.29: UTP and STP cables  \n \nCategories of UTP Cables  \nThe Electronic Industries Association (EIA) classifies UTP cables into seven categories, with \nCategory 1 being the lowest quality and Category 7 being the highest. Each category is suitable \nfor specific applications, and the standards help ensure the cable meets certain performance \ncriteria.  \nConnectors  \nThe RJ45 connector is the most common connector for UTP cables. It is a keyed connector, \nmeanin g it can only be inserted in one direction, which ensures a proper connection.  \nTable 1.1:  Categories of unshielded twisted -pair cables  \nCategory  Specification  Data \nRate \n(Mbps)  Use \n1 Unshielded twisted -pair used in telephone lines  2 Telephone  \n2 Unshielded twisted -pair originally used in T1 lines  10 T1 Lines",
+    "embedding_dim": 1024
+  },
+  "67": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 67,
+    "text": "Category  Specification  Data \nRate \n(Mbps)  Use \n1 Unshielded twisted -pair used in telephone lines  2 Telephone  \n2 Unshielded twisted -pair originally used in T1 lines  10 T1 Lines  \n3 Improved Category 2 used in LANs  20 LANs  \n4 Improved Category 3 used in Token Ring networks  100 Token \nRing \nNetworks  \n5 Cable wire is normally 24 AWG with a jacket and \noutside sheath  125 LANs  \n5E An extension of Category 5 with additional features to \nminimize crosstalk and electromagnetic interference  125 LANs  \n6 New category with matched components from the same \nmanufacturer; cable tested at a 200 -Mbps data rate  200 LANs  \n7 Sometimes called SSTP (Shielded Screen Twisted -\nPair); each pair is wrapped in helical metallic foil \nfollowed by a metallic foil shield  600 LANs",
+    "embedding_dim": 1024
+  },
+  "68": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 68,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  32  \n \nFigure 1.30: UTP connector  \nPerformance  \nThe performance of twisted -pair cables is often assessed by measuring attenuation (signal loss) in \nrelation to frequency and distance. Although twisted -pair cables can handle a broad range of \nfrequencies, attenuation increases significantly at frequencies above 100 kHz. Attenuation is \nmeasured in decibels per kilometer (dB/km), and higher frequ encies result in greater signal loss.  \nApplications  \nTwisted -pair cables are widely used in various applications:  \n• Telephone Lines:  Used for voice and data transmission in the local loop connecting \nsubscribers to telephone offices.  \n• DSL Lines:  Provide high -data-rate connections by utilizing the high bandwidth of UTP \ncables.  \n• Local -Area Networks (LANs):  Employed in networks such as 10Base -T and 100Base -T \nfor data transmission.  \n6.3. Coaxial Cable",
+    "embedding_dim": 1024
+  },
+  "69": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 69,
+    "text": "cables.  \n• Local -Area Networks (LANs):  Employed in networks such as 10Base -T and 100Base -T \nfor data transmission.  \n6.3. Coaxial Cable  \nCoaxial cable, often referred to as coax, is designed t o carry high -frequency signals, unlike twisted -\npair cables. It consists of the following parts:  \n• Central Core Conductor : A solid or stranded copper wire, responsible for carrying the \nsignal.  \n• Insulating Sheath : Surrounds the core conductor, separating it fro m the outer conductor.  \n• Outer Conductor : Made of metal foil, braid, or both, which serves two purposes:  \no Acts as a shield against external noise.  \no Functions as the second conductor to complete the circuit.  \n• Additional Insulation : Encases the outer conductor fo r further protection.  \n• Plastic Cover : Provides external protection for the entire cable.",
+    "embedding_dim": 1024
+  },
+  "70": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 70,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  33  \n \nFigure 1.31 Coaxial cable  \nThis design helps coaxial cables transmit signals with less interference and at higher frequencies \ncompared to twisted -pair cables.  \nCoaxial  Cable Standards (RG Ratings)  \nCoaxial cables are classified based on Radio Government (RG) ratings. Each RG number specifies \ncertain physical characteristics of the cable, such as:  \n• Wire Gauge : Thickness of the inner conductor.  \n• Insulation : Thickness and mat erial of the inner insulator.  \n• Shielding : Design and construction of the outer conductor.  \n• Outer Casing : Size and type of the protective cover.  \nThese RG -rated cables are suited for different specialized applications, as indicated by their \nspecifications.  \nTable 1.2: RG -rated cables are suited for different specialized applications.  \nCategory  Use \nRG-59 75 Ω  Cable TV  \nRG-58 50 Ω  Thin Ethernet  \nRG-11 50 Ω  Thin Ethernet  \n \nCoaxial Cable Connectors",
+    "embedding_dim": 1024
+  },
+  "71": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 71,
+    "text": "Category  Use \nRG-59 75 Ω  Cable TV  \nRG-58 50 Ω  Thin Ethernet  \nRG-11 50 Ω  Thin Ethernet  \n \nCoaxial Cable Connectors  \nTo connect coaxial cables to devices, special connectors are required. The most common connector \ntype is the Bayonet Neill -Concelman (BNC)  connector. There are different variations of this \nconnector:  \n• BNC Connector : Used to connect the cable to a device (e. g., a TV).  \n• BNC T Connector : Often used in Ethernet networks to split the signal to multiple devices.  \n• BNC Terminator : Placed at the end of the cable to prevent signal reflection and ensure \nstable transmission.",
+    "embedding_dim": 1024
+  },
+  "72": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 72,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  34  \n \n \nFigure 1.32: BNC connectors  \nPerformance of Coaxial Cables  \nCoaxial cables provide higher bandwidth compared to twisted -pair cables, allowing them to carry \nmore data. However, their attenuation  (signal weakening) is greater, meaning the signal degrades \nover distance and requires frequent use of repea ters to maintain signal strength.  \nApplications  \n• Analog Telephone Networks : Coaxial cables were used to carry large amounts of voice \nsignals, with one cable supporting up to 10,000 voice channels.  \n• Digital Telephone Networks : Coaxial cables were capable of transmitting digital data at \nspeeds up to 600 Mbps.  \nToday, fiber optic cables  have largely replaced coaxial cables in telephone networks due to their \nsuperior performance.  \n6.4. Fiber -Optic Cable  \nA fiber -optic cable  is a medium made of glass or plastic that tra nsmits signals as light. To",
+    "embedding_dim": 1024
+  },
+  "73": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 73,
+    "text": "superior performance.  \n6.4. Fiber -Optic Cable  \nA fiber -optic cable  is a medium made of glass or plastic that tra nsmits signals as light. To \nunderstand how it works, it's important to first grasp the nature of light.  \nProperties of Light",
+    "embedding_dim": 1024
+  },
+  "74": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 74,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  35 Figure 1.33: Bending of light ray  \n• Light travels in a straight line  when moving through a uniform material.  \n• If light passes from one substance into another with a different density, the direction \nchanges (refraction).  \n• Critical Angle : The angle of incidence at which light bends along the boundary between \ntwo materials. If the angle is greater than the critical angle, the light reflects instead of \nrefracting.  \nStructure of Optical Fibers  \nOptical fibers guide light through internal reflection . The core (made of glass or plastic) is \nsurrounded by a cladding  with lower density. This ensures that light reflecting off the core -\ncladding  boundary remains in the core.  \n \nFigure 1.34: Optical fiber  \nPropagation Modes  \nOptical fibers use two main modes for light propagation:  \n \nFigure 1.35: Propagation modes  \n1. Multimode : Multiple light beams travel through the core along different paths.",
+    "embedding_dim": 1024
+  },
+  "75": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 75,
+    "text": "Propagation Modes  \nOptical fibers use two main modes for light propagation:  \n \nFigure 1.35: Propagation modes  \n1. Multimode : Multiple light beams travel through the core along different paths.  \no Step -Inde x Fiber : The core has uniform density, and light changes direction \nabruptly at the core -cladding interface.  \no Graded -Index Fiber : The core's density gradually decreases from the center, \nreducing signal distortion.  \n2. Single -Mode : Uses step -index fiber but has a  smaller core and tightly focused light. The \nbeams travel nearly parallel, minimizing delay and distortion.",
+    "embedding_dim": 1024
+  },
+  "76": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 76,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  36  \n \nFigure 1.36: Modes  \nFiber Sizes  \nOptical fibers are classified by the ratio of core diameter to cladding diameter (both measured in \nmicrometers). S ingle -mode fibers typically have a smaller core diameter compared to multimode \nfibers.  \nFiber -Optic Cable Composition  \nA typical fiber -optic cable consists of:  \n• Outer jacket  (PVC or Teflon)  \n• Kevlar strands  for strength  \n• Plastic coating  for cushioning  \n• Core and cladding  for light transmission  \nFiber -Optic Connectors  \nThere are three types of connectors:  \n1. SC (Subscriber Channel) : Push/pull locking, used in cable TV .  \n2. ST (Straight Tip) : Bayonet locking, used in networking.  \n3. MT-RJ: Same size as RJ45, used for data networks.",
+    "embedding_dim": 1024
+  },
+  "77": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 77,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  37  \nFigure 1.37: Fiber -optic cable connectors  \nPerformance  \nFiber -optic cables experience less signal attenuation than twisted -pair or coaxial cables, requiring \nfewer repeaters. They also support higher data transfer rates, especially with wavelengt h-division \nmultiplexing (WDM) . \nApplications  \n• Backbone Networks : Due to their wide bandwidth, fiber -optic cables are used in backbone \nnetworks, such as SONET.  \n• Hybrid Networks : Some cable TV companies use a mix of fiber -optic and coaxial cables.  \n• Local Area Ne tworks (LANs) : Fiber -optic cables are used in networks like 100Base -FX \nand 1000Base -X. \nAdvantages of Optical Fiber  \n1. Higher Bandwidth : Supports higher data rates.  \n2. Less Signal Attenuation : Can transmit over longer distances without needing repeaters.  \n3. Immunity  to Electromagnetic Interference : Not affected by electromagnetic noise.",
+    "embedding_dim": 1024
+  },
+  "78": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 78,
+    "text": "2. Less Signal Attenuation : Can transmit over longer distances without needing repeaters.  \n3. Immunity  to Electromagnetic Interference : Not affected by electromagnetic noise.  \n4. Resistance to Corrosive Materials : More durable in harsh environments.  \n5. Lightweight : Lighter than copper cables.  \n6. Greater Immunity to Tapping : More secure than copper cables.  \nDisadvanta ges of Optical Fiber  \n1. Installation and Maintenance : Requires specialized skills.  \n2. Unidirectional Light Propagation : Requires two fibers for bidirectional communication.  \n3. Cost : More expensive than other cables, especially if bandwidth demand is low.  \nFiber -optic cables offer numerous benefits, particularly in high -bandwidth and long -distance \napplications, but their costs and technical requirements must be carefully considered.",
+    "embedding_dim": 1024
+  },
+  "79": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 79,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  38 7. UNGUIDED MEDIA: WIRELESS  \nUnguided media refers to communication channels that use wireless signals to transmit data. These \nsignals travel through the air without any physical conductor. Common types of wireless \ntransmission include radio waves, microwaves, and infrared.  \nWireless communication involves transmitting electromagnetic waves without using physical \nconductors like cables or wires. Instead, signals are broadcast through free space, making them \naccessible to any device equipped to receive them.  \nElectromagnetic Spectrum for Wireless Communication  \nWireless communication utilizes a portion of the electromagnetic spectrum, ranging from 3 kHz \nto 900 THz, as shown in Figure 1.38. This spectrum includes a variety of frequencies that allow \ndifferent methods of signal transmission.  \n \nFigure 1.38 Electromagnetic spectrum for wireless communication  \nTypes of Propagation",
+    "embedding_dim": 1024
+  },
+  "80": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 80,
+    "text": "different methods of signal transmission.  \n \nFigure 1.38 Electromagnetic spectrum for wireless communication  \nTypes of Propagation  \nUnguided signals, such as radio waves, can travel from the source to the destination in three main \nways, illustrated in Figure 1.40: \n1. Ground Propagation : \no In this method, low -frequency radio waves travel close to the Earth ’s surface, \nfollowing the curvature of the planet.  \no These signals radiate from the transmitting antenna in all directions, and the \ndistance they cover depends on the power of the signal —the higher the power, the \nfarther the signal can travel.  \n2. Sky Propagation : \no Higher -frequency radio waves are transmitted upward into the ionosphere, where \nthey are reflected back to Earth.  \no This method enables long -distance communication with relatively low power.",
+    "embedding_dim": 1024
+  },
+  "81": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 81,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  39 3. Line -of-Sight Propagation : \no In this method, very high -frequency signals are transmitted directly between \nantennas in a straight line.  \no The antennas must be properly aligned and either tall enough or close enough to \navoid being affected by the curvature of the Earth. This method is mo re complex \nbecause radio waves can ’t be perfectly focused.  \n \nFigure 1.40: Propagation methods  \nFrequency Bands  \nThe electromagnetic spectrum for wireless communication is divided into eight different ranges or \n\"bands.\" These bands are classified based on frequency and are regulated by government \nauthorities. The ranges extend from Very Low Frequency (VLF) to Extreme ly High Frequency \n(EHF). Each band has specific propagation characteristics and applications, as summarized in \nTable 1.3. \nTable 1.3: Frequency Bands for Applications  \nBand  Range  Propagation  Application  \nVery Low Frequency",
+    "embedding_dim": 1024
+  },
+  "82": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 82,
+    "text": "Table 1.3. \nTable 1.3: Frequency Bands for Applications  \nBand  Range  Propagation  Application  \nVery Low Frequency \n(VLF)  3–30 kHz  Ground  Long -range radio navigation  \nLow Frequency (LF)  30–300 kHz  Ground  Radio beacons, navigational \nlocators  \nMiddle Frequency (MF)  300 kHz –3 \nMHz  Sky AM radio  \nHigh Frequency (HF)  3–30 MHz  Sky Citizens band (CB), \nship/aircraft communication  \nVery High Frequency \n(VHF)  30–300 MHz  Sky and Line -of-\nsight  VHF TV, FM radio  \nUltra -High Frequency \n(UHF)  300 MHz –3 \nGHz  Line-of-sight  UHF TV, cellular phones, \npaging, satellite  \nSuper High Frequency \n(SHF)  3–30 GHz  Line-of-sight  Satellite communication  \nExtremely High Frequency \n(EHF)  30–300 GHz  Line-of-sight  Radar, satellite \ncommunication  \nLight Wave (Infrared)  300 GHz –\n900 THz  Line-of-sight  Infrared communication",
+    "embedding_dim": 1024
+  },
+  "83": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 83,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  40  \nThis breakdown of the spectrum ensures efficient and organized use of frequencies for various \ncommunication purposes.  \n7.1. Radio Waves  \nFrequency Range : Typically, from 3 kHz to 1 GHz.  \nCharacteristics of Radio Waves:  \n• Omnidirectional Propagation : Radio waves are mostly omnidirectional, meaning they \nspread out in all directions from the transmitting antenna. The sending and receiving \nantennas don’t need to be aligned for successful communication, as any receiving antenna \nin range can pick up the s ignal. However, this characteristic also leads to a disadvantage: \ninterference . Multiple antennas transmitting on the same frequency or band can interfere \nwith one another.  \n• Long -Distance Travel : Radio waves, especially those that propagate in the sky mode , can \ntravel long distances, making them ideal for applications like AM radio broadcasting .",
+    "embedding_dim": 1024
+  },
+  "84": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 84,
+    "text": "• Long -Distance Travel : Radio waves, especially those that propagate in the sky mode , can \ntravel long distances, making them ideal for applications like AM radio broadcasting . \n• Penetration of Walls : Radio waves, particularly those with low and medium \nfrequencies , can penetrate walls. This is useful because devices like AM radios can receive  \nsignals indoors. However, it can also be a disadvantage, as signals cannot be restricted to \nonly the inside or outside of a building, leading to potential signal leakage . \nLimitations:  \n• The radio wave band is relatively narrow , just under 1 GHz. When divide d into subbands, \nthe limited width of these subbands results in low data rates  for digital communications.  \n• Most of the radio wave spectrum is regulated  by government authorities, like the FCC  in \nthe United States  and Department of Telecommunications (DoT)  & Telecom Regulatory",
+    "embedding_dim": 1024
+  },
+  "85": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 85,
+    "text": "• Most of the radio wave spectrum is regulated  by government authorities, like the FCC  in \nthe United States  and Department of Telecommunications (DoT)  & Telecom Regulatory \nAuthority of India (TRAI)  in India . Any use of this spectrum requires official permission . \n• Licensed Frequency Bands: FM band is licensed between 88-108 MHz  for radio \nbroadcasting and Unlicensed Frequency Bands: Wi -Fi: 2.4 GHz , 5 GHz  band.  \nOmnidirectional Antenna:  \nRadio waves typically utilize omnidirectional antennas , which transmit signals in all directions. \nThese antennas come in various types, depending on factors like wavelength, signal strength , \nand the intended purpose of transmission.  \nApplications of Radio Waves:  \nThanks to their omnidirectional nature, radio waves are widely used for multicasting , where one \nsender transmits to many receivers. Common examples include:  \n• AM and FM radio  \n• Television broadcasting",
+    "embedding_dim": 1024
+  },
+  "86": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 86,
+    "text": "sender transmits to many receivers. Common examples include:  \n• AM and FM radio  \n• Television broadcasting  \nDr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  41 • Maritime radio  \n• Cordless phones  \n• Paging systems  \n \nFigure 1.41: Omnidirectional antenna  \n \n7.2. Microwaves  \nFrequency Range : From 1 GHz to 300 GHz.  \nCharacteristics : Microwaves require line -of-sight transmission, meaning the transmitter and \nreceiver must be directly visible to each other. They are less effective in penetrating obstacles like \nbuildings.  \n \nFigure 1.42 Unidirectional antennas  \n \nApplications : Satellite communications, radar systems, and microwave ovens. In networking, \nmicrowaves are used for point -to-point communication l inks and cellular networks.  \n7.3. Infrared  \nFrequency Range : From 300 GHz to 400 THz.  \nCharacteristics : Infrared signals are used for short -range communication and do not penetrate",
+    "embedding_dim": 1024
+  },
+  "87": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 87,
+    "text": "7.3. Infrared  \nFrequency Range : From 300 GHz to 400 THz.  \nCharacteristics : Infrared signals are used for short -range communication and do not penetrate \nwalls, making them suitable for indoor use. They are highly directional and requir e line -of-sight \ntransmission.  \nApplications : Remote controls, short -range data transmission (such as between computers and \nperipherals), and infrared sensors for detecting heat in security systems or medical devices.",
+    "embedding_dim": 1024
+  },
+  "88": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 88,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  42 8. PACKET SWITCHING  \nIn data communication, when a message needs to be sent from one end system to another through \na packet -switched network , it must be divided into smaller units called packets . These packets \ncan be of either fixed or variable sizes, depending on the network and the protocol being used.  \nKey Features of Packet Switching:  \n1. No Resource Allocation:  \no Unlike circuit -switched networks, packet switching does not reserve any specific \nresources like bandwidth or processing time for the packets.  \no Resources are allocated onl y when needed, and packets are processed on a first-\ncome, first -served  basis.  \n2. Possible Delays:  \no Since there is no dedicated path or reserved resources, packets might experience \ndelays. For instance, if a switch is busy processing other packets, newly arrive d \npackets must wait their turn, which can increase transmission time.  \nTypes of Packet -Switched Networks:",
+    "embedding_dim": 1024
+  },
+  "89": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 89,
+    "text": "delays. For instance, if a switch is busy processing other packets, newly arrive d \npackets must wait their turn, which can increase transmission time.  \nTypes of Packet -Switched Networks:  \n1. Datagram Networks:  In these networks, each packet is treated independently, and it may \ntake different routes to reach the destination.  \n2. Virtual Circuit Networks:  These networks establish a pre -determined path before any \ndata packets are sent, ensuring all packets follow the same route.  \nPacket switching is an efficient way to transfer data, especially in systems where multiple users \nneed to share the same network resources.  \n8.1. Datagram Networks  \nIn a datagram network , each packet is handled independently, even if it's part of a larger \ntransmission. The network treats each packet as if it stands alone. These individual packets are \nknown as datagrams . \nKey Features of Datagram Networks:",
+    "embedding_dim": 1024
+  },
+  "90": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 90,
+    "text": "transmission. The network treats each packet as if it stands alone. These individual packets are \nknown as datagrams . \nKey Features of Datagram Networks:  \n1. Packet Independence : Each packet in a datagram network can take a different path to its \ndestination, and the network doesn't maintain any connection state between sender and \nreceiver.  \n2. Routing : Packet routing is typically done  at the network layer , where packets are \nforwarded based on their destination address. The devices that manage packet routing are \ncalled routers . \nDr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  43 3. No Fixed Path : Since packets may travel along different routes, they might reach their \ndestination out of orde r or with varying delays. Some packets could even be dropped if the \nnetwork runs out of resources.  \n4. Connectionless : A datagram network is often referred to as a connectionless network",
+    "embedding_dim": 1024
+  },
+  "91": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 91,
+    "text": "network runs out of resources.  \n4. Connectionless : A datagram network is often referred to as a connectionless network  \nbecause it doesn ’t require a setup phase (like circuit -switched networks) . No information \nabout the connection is saved, and each packet is routed independently.  \nHow Datagram Networks Work  \nIn Figure 1.43, four packets are sent from station A to station X using the datagram approach. Here, \nswitches are called routers, and they a re depicted with a different symbol. Although these four \npackets belong to the same message, they might take different paths to reach their destination due \nto varying link capacities and network congestion. This can lead to packets arriving out of order, \nwith differing delays, or even being lost or dropped due to insufficient resources. Upper -layer \nprotocols typically handle the reordering and retransmission of lost packets before delivering them \nto the application.",
+    "embedding_dim": 1024
+  },
+  "92": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 92,
+    "text": "protocols typically handle the reordering and retransmission of lost packets before delivering them \nto the application.  \n \nFigure 1.43: A datagram network with four switches (routers)  \nRouting Table  \nIn a datagram network, each switch uses a routing table based on destination addresses to forward \npackets. These tables are dynamic and updated regularly.  \n \nFigure 1.44: Routing table in a datagram network",
+    "embedding_dim": 1024
+  },
+  "93": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 93,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  44 The routing  table records destination addresses and the corresponding output ports. This differs \nfrom circuit -switched networks, where entries are created during the setup phase and removed \nduring teardown.  \nDestination Address  \nEvery packet in a datagram network has a  header containing a destination address. Upon receiving \na packet, the switch checks this address and uses the routing table to determine the appropriate \nforwarding port. This destination address remains unchanged throughout the packet's journey.  \nDelay  \nDespite their efficiency, datagram networks can experience higher delays compared to virtual -\ncircuit networks. Although there are no setup or teardown phases, each packet may encounter \nwaiting times at switches. Additionally, since packets from the same messa ge may travel through \ndifferent routes, delays are not uniform. Figure 1.45, illustrates the delay for a packet traveling",
+    "embedding_dim": 1024
+  },
+  "94": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 94,
+    "text": "waiting times at switches. Additionally, since packets from the same messa ge may travel through \ndifferent routes, delays are not uniform. Figure 1.45, illustrates the delay for a packet traveling \nthrough two switches, including transmission times (3T), propagation delays (3τ), and waiting \ntimes (w1 + w2). The total delay is give n by:  \n𝑇𝑜𝑡𝑎𝑙  𝑑𝑒𝑙𝑎𝑦=3𝑇+3𝜏+𝑤1+𝑤2 \n• Transmission Time : The time to send a packet from one point to another.  \n• Propagation Delay : The time it takes for the signal to travel through the medium.  \n• Waiting Time : Time spent at routers before being forwarded .  \n \nFigure 1.45: Delay in a datagram network  \nAdvantages:  \n• Efficiency : Datagram networks can be more efficient than circuit -switched networks. \nResources like bandwidth are allocated only when packets are being transmitted, allowing \nfor better utilization of  network resources.",
+    "embedding_dim": 1024
+  },
+  "95": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 95,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  45 8.2. Virtual -Circuit Networks  \nA virtual -circuit network (VCN)  is a hybrid network model that combines features of both \ncircuit -switched  and datagram networks . It provides a balance between connection -oriented and \nconnectionless transmission methods.  \nKey Features:  \n1. Connection Phases:  \no A VCN has three distinct phases: setup , data transfer , and teardown . \n▪ Setup Phase : A path is established between the sender and receiver before \ndata transmission.  \n▪ Data Transfer Phase : Data is sent along  the established path in packets.  \n▪ Teardown Phase : After data transmission, the connection is terminated, \nand resources are released.  \n \nFigure 1.46: Virtual -circuit network  \n2. Resource Allocation:  \no Resources can either be allocated during the setup phase (as in  a circuit -switched \nnetwork) or dynamically during data transmission (similar to a datagram network).",
+    "embedding_dim": 1024
+  },
+  "96": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 96,
+    "text": "2. Resource Allocation:  \no Resources can either be allocated during the setup phase (as in  a circuit -switched \nnetwork) or dynamically during data transmission (similar to a datagram network).  \n3. Packetized Data with Local Addressing:  \no Data is divided into packets, each of which carries an address. However, unlike in \na datagram network, the address is not end -to-end but local , meaning it only tells \nthe next switch where to send the packet.  \n4. Consistent Path for Packets:  \no Once a connection is established, all packets follow the same predetermined path. \nThis ensures a predictable route for all the packets  between the sender and receiver, \nakin to a circuit -switched network.",
+    "embedding_dim": 1024
+  },
+  "97": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 97,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  46 5. Layer of Operation:  \no Virtual -circuit networks typically operate at the data -link layer , while circuit -\nswitched networks operate at the physical layer, and datagram networks at the \nnetwork  layer.  \nAddressing in Virtual -Circuit Networks:  \n1. Global Addressing:  \no A global address is used to uniquely identify the source and destination during the \nsetup phase. This address is typically unique within the network or globally if the \nnetwork is part of a larger system.  \n2. Virtual -Circuit Identifier (VCI):  \no During the data transfer phase, a virtual -circuit identifier (VCI)  is used instead of \nthe global address. The VCI is a small number with local scope, meaning it only \nidentifies the path between two adjacent switches.  \no The VCI changes at each switch, as each switch uses its own set of VCIs to manage \nthe connection. This allows efficient and simple management of packet forwarding.",
+    "embedding_dim": 1024
+  },
+  "98": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 98,
+    "text": "o The VCI changes at each switch, as each switch uses its own set of VCIs to manage \nthe connection. This allows efficient and simple management of packet forwarding.  \n \nFigure 1.47: Virtual -circuit identifier  \nThree Phases in a Virtual -Circuit Networ k \nIn a virtual -circuit network, the communication between a source and destination involves three \nphases: setup , data transfer , and teardown . These phases ensure that a reliable path is established \nand maintained for the communication session.  \n1. Setup Phase : \no The source and destination use their global addresses to establish a connection. \nDuring this phase, switches along the path create table entries to store information \nabout the virtual circuit. This phase ensures that each switch is prepared to route \nthe d ata properly.  \n2. Data Transfer Phase : \no After the setup phase, data is transferred between the source and destination. The \nswitches use the table entries created during the setup phase to route the frames.",
+    "embedding_dim": 1024
+  },
+  "99": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 99,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  47 The switches maintain information like the incoming and  outgoing ports and Virtual \nCircuit Identifiers (VCI). Each frame is processed the same way, with the VCIs \nchanging at each switch to ensure the data follows the correct path. This phase \ncontinues until all frames are transferred.  \n3. Teardown Phase : \no Once the data transfer is complete, the source and destination send signals to the \nswitches to remove the corresponding table entries, effectively ending the virtual \ncircuit.  \n \nFigure 1.48: Switch and tables in a virtual -circuit network  \nData -Transfer Phase  \nDuring d ata transfer, the key action is switching the frames between the source and destination. \nEach switch in the path must have a table with entries corresponding to the virtual circuit. A table \ntypically consists of four columns: incoming port, incoming VCI, o utgoing port, and outgoing \nVCI.",
+    "embedding_dim": 1024
+  },
+  "100": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 100,
+    "text": "typically consists of four columns: incoming port, incoming VCI, o utgoing port, and outgoing \nVCI.  \n• When a frame arrives at a switch, the switch looks for the entry that matches the incoming \nport and VCI.  \n• After identifying the entry, the switch updates the VCI to the new value and forwards the \nframe to the next switch via the outgoing port.  \nFor example, if a frame arrives at switch 1 with VCI 14 on port 1, the switch finds this entry in its \ntable, updates the VCI to 22, and forwards the frame through port 3. This process repeats at each \nswitch, ensuring the frame reaches its destination.",
+    "embedding_dim": 1024
+  },
+  "101": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 101,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  48 Setup Phase  \nIn the setup phase, a virtual circuit is established between the source and destination by creating \ntable entries at each switch. This phase consists of two main steps:  \n1. Setup Request : \no A setup request frame is sent from the so urce (A) to the destination (B). As the \nframe passes through each switch, the switch creates an entry in its table.  \no For example, when the setup frame reaches switch 1, it identifies that the outgoing \nport for the connection is port 3 and assigns an incomin g VCI (14) for the frame \ncoming from port 1. At this point, the outgoing VCI remains unknown.  \n \nFigure 1.49: Source -to-destination data transfer in a virtual -circuit network  \n2. Acknowledgment : \no Once the setup request reaches the destination, the destination as signs a VCI (e.g., \n77) for incoming frames from the source. The acknowledgment is sent back to the",
+    "embedding_dim": 1024
+  },
+  "102": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 102,
+    "text": "2. Acknowledgment : \no Once the setup request reaches the destination, the destination as signs a VCI (e.g., \n77) for incoming frames from the source. The acknowledgment is sent back to the \nsource, and each switch updates its table to complete the missing outgoing VCI \ninformation.",
+    "embedding_dim": 1024
+  },
+  "103": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 103,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  49  \nFigure 1.50: Setup acknowledgment in a virtual -circuit network  \n3. Teardown Phase  \nWhen the communication is finished, the source and destination send a signal to the switches to \nremove the corresponding table entries, thus ending the virtual circuit. This process frees up the \nresources for future virtual circuits.  \nEfficie ncy in Virtual -Circuit Networks  \nIn a virtual -circuit network, resource allocation can happen either during the setup phase  or on \ndemand during the data -transfer phase . When resources are reserved during the setup phase, each \npacket experiences the same del ay. However, if resources are allocated on demand, packet delays \nmay vary.  \nEven when resource allocation is on demand, a significant advantage of virtual -circuit networks is \nthat the source can check resource availability before data transfer .",
+    "embedding_dim": 1024
+  },
+  "104": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 104,
+    "text": "may vary.  \nEven when resource allocation is on demand, a significant advantage of virtual -circuit networks is \nthat the source can check resource availability before data transfer . \nIn virtual -circuit switching, all packets from the same source to the same destination follow the \nsame path. However, with on -demand resource allocation, packets may arrive with different delays \ndepending on resource availability.  \nDelay in Virtual -Circuit Networks  \nIn a virtual -circuit network, delays occur during the setup  and teardown  phases. These are one -\ntime delays. If resources are allocated during setup, there is no additional waiting time for \nindividual packets during data transfer.  \nThe total delay in such a net work includes:  \n• Three transmission times (3T) : the time taken for the packet to be transmitted across \nlinks.",
+    "embedding_dim": 1024
+  },
+  "105": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 105,
+    "text": "Dr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  50 • Three propagation times (3τ): the time taken for the packet to travel across physical \ndistances.  \n• Setup delay : includes transmission and propagation in both directions during the setup \nphase.  \n• Teardown delay : includes transmission and propagation in one direction during the \nteardown phase.  \nFor simplicity, processing delays at the switches (routers) are ignored in this calculation.  \nThus, the total delay for the packet is:  \n𝑇𝑜𝑡𝑎𝑙  𝑑𝑒𝑙𝑎𝑦=3𝑇+3𝜏+𝑠𝑒𝑡𝑢𝑝  𝑑𝑒𝑙𝑎𝑦+𝑡𝑒𝑎𝑟𝑑𝑜𝑤𝑛  𝑑𝑒𝑙𝑎𝑦  \n \nQUESTION S  \n1. Data Communications  \n1. What are the five key components of a data communication system, and what role does \neach play in ensuring effective communication?  \n2. Explain the different forms of data representation used in data communications and provide \nexamples for each.  \n3. Describe the three modes of data flow and provide real -world examples where each mode \nis used.  \n2. Networks",
+    "embedding_dim": 1024
+  },
+  "106": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 106,
+    "text": "examples for each.  \n3. Describe the three modes of data flow and provide real -world examples where each mode \nis used.  \n2. Networks  \n1. What are the key criteri a used to evaluate the performance, reliability, and security of a \nnetwork?  \n2. Explain the difference between point -to-point and multipoint physical structures in \nnetwork connections. Provide advantages and disadvantages of each.  \n3. Network Types  \n1. Compare and contrast a Local Area Network (LAN) and a Wide Area Network (WAN) in \nterms of characteristics, speed, and geographical coverage.  \n2. Define packet switching and explain the key differences between circuit switching and \npacket switching.  \n3. Discuss the role of rou ters and switches in the structure of the Internet. How do they \ncontribute to efficient data transfer?  \n4. What are the different ways to access the Internet, and how do factors like speed and \ncoverage differ between these methods?",
+    "embedding_dim": 1024
+  },
+  "107": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 107,
+    "text": "contribute to efficient data transfer?  \n4. What are the different ways to access the Internet, and how do factors like speed and \ncoverage differ between these methods?  \nDr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  51 4. Protocol Layering  \n1. Explain  the key principles of protocol layering and discuss how these principles ensure \nefficient communication between two devices over a network.  \n2. What are logical connections in the context of protocol layering, and how do they facilitate \ncommunication between peer layers on different devices?  \n3. Explain the layered architecture of the TCP/IP protocol suite. How does each layer \ncontribute to overall network communication?  \n4. Discuss the main functions of the following layers in the TCP/IP protocol suite:  \na. Application L ayer \nb. Transport Layer  \nc. Network Layer  \nd. Data Link Layer  \ne. Physical Layer  \n5. Describe the process of encapsulation and decapsulation in the TCP/IP protocol suite. Why",
+    "embedding_dim": 1024
+  },
+  "108": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 108,
+    "text": "a. Application L ayer \nb. Transport Layer  \nc. Network Layer  \nd. Data Link Layer  \ne. Physical Layer  \n5. Describe the process of encapsulation and decapsulation in the TCP/IP protocol suite. Why \nare these processes crucial for data communication?  \n6. Explain the different types of addresses used at  each layer of the TCP/IP protocol stack. \nWhy is addressing critical for network communication?  \n7. What is multiplexing and demultiplexing in the TCP/IP protocol suite? How do these \nprocesses ensure that data is correctly sent and received by the right applic ation?  \n \n5. Transmission Media  \n1. Define guided media and list and explain three types of guided media used in network \ncommunications . \n2. Explain the difference between unshielded twisted -pair (UTP) and shielded twisted -pair (STP) \ncables. What are their primary uses?  \n3. Describe how the twisting of pairs in twisted -pair cables helps to reduce crosstalk.",
+    "embedding_dim": 1024
+  },
+  "109": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 109,
+    "text": "cables. What are their primary uses?  \n3. Describe how the twisting of pairs in twisted -pair cables helps to reduce crosstalk.  \n4. What are the main components of a coaxial cable, and how do they contribute to its \nperformance?  \n5. Describe the principle of operation of fiber -optic cables and explain  why they provide high -\nspeed data transmission.  \n6. Discuss the advantages and disadvantages of fiber -optic cables compared to coaxial and \ntwisted -pair cables.  \n7. What are radio waves, and how are they used in wireless communication? Provide an example \nof a commo n application.  \n8. Explain the concept of frequency allocation in radio wave communication and its importance.  \n9. Discuss the characteristics of microwave transmission and its typical uses in communication \nsystems.  \n10. Describe how infrared communication works and li st two common applications where infrared \ntechnology is used.  \nDr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  52  \n6. Packet Switching",
+    "embedding_dim": 1024
+  },
+  "110": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 110,
+    "text": "10. Describe how infrared communication works and li st two common applications where infrared \ntechnology is used.  \nDr. Devaraju B M , Chethana H  R Dept of CSE, RNSIT  52  \n6. Packet Switching  \n1. What is a datagram network? Describe its key characteristics and how it handles packet routing \nand delivery.  \n2. Compare and contrast datagram networks with virtual -circuit networ ks in terms of reliability, \ncomplexity, and overhead.  \n3. In a datagram network, how does the destination node determine the correct order of packets? \nWhat issues might arise from the unordered delivery of packets?  \n4. Explain how a datagram network handles packet  fragmentation and reassembly. What are the \npotential impacts on network performance and reliability?  \n5. Define a virtual -circuit network and describe the main phases involved in setting up, \nmaintaining, and tearing down a virtual circuit.  \n6. Discuss the advanta ges and disadvantages of virtual -circuit networks compared to datagram",
+    "embedding_dim": 1024
+  },
+  "111": {
+    "doc_id": "e885616b",
+    "source": "CN Module 1 Notes.pdf",
+    "chunk_id": 111,
+    "text": "maintaining, and tearing down a virtual circuit.  \n6. Discuss the advanta ges and disadvantages of virtual -circuit networks compared to datagram \nnetworks. Include aspects such as connection setup, resource allocation, and data transfer \nefficiency.  \n7. How does a virtual -circuit network handle data transfer once the connection is est ablished? \nWhat mechanisms are in place to ensure data integrity and order?  \n8. Explain the role of signaling in virtual -circuit networks. How does signaling contribute to the \nestablishment and teardown of virtual circuits?  \n9. Describe a scenario where virtual -circuit networks would be preferred over datagram \nnetworks. Justify your choice based on factors such as performance requirements and network \nmanagement.",
+    "embedding_dim": 1024
+  },
+  "_dim": 1024
+}
