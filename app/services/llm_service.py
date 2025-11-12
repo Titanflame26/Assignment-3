@@ -8,7 +8,7 @@ then generates a contextual, grounded answer.
 
 import logging
 from ollama import Client
-from core.config import OLLAMA_BASE_URL, OLLAMA_MODEL
+from app.core.config import OLLAMA_BASE_URL, OLLAMA_MODEL
 
 logger = logging.getLogger(__name__)
 
