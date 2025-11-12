@@ -2,8 +2,8 @@
 services/vector_service.py
 
 Handles vector storage and retrieval using FAISS.
-Ensures embedding dimensions match OpenAI embeddings,
-and maintains metadata for each stored chunk.
+Ensures embedding dimensions match OpenAI/Ollama embeddings,
+and maintains JSON-safe metadata for each stored chunk.
 """
 
 import os
@@ -12,7 +12,7 @@ import logging
 import faiss
 import numpy as np
 from pathlib import Path
-from typing import List, Dict, Tuple
+from typing import List, Dict
 from app.core.config import DATA_DIR, FAISS_INDEX_PATH, METADATA_PATH
 from app.services.embedding_service import get_single_embedding
 
@@ -24,7 +24,7 @@ class VectorService:
         os.makedirs(DATA_DIR, exist_ok=True)
         self.index = None
         self.metadata: Dict[str, Dict] = {}
-        self.dim = None  # embedding dimension
+        self.dim = None
         self._load()
 
     # ----------------------------
@@ -32,20 +32,38 @@ class VectorService:
     # ----------------------------
     def _load(self):
         """Load FAISS index and metadata if they exist."""
-        if METADATA_PATH.exists():
-            with open(METADATA_PATH, "r", encoding="utf-8") as f:
-                self.metadata = json.load(f)
-                self.dim = self.metadata.get("_dim")
+        try:
+            if METADATA_PATH.exists():
+                with open(METADATA_PATH, "r", encoding="utf-8") as f:
+                    self.metadata = json.load(f)
+                    self.dim = self.metadata.get("_dim")
 
-        if FAISS_INDEX_PATH.exists() and self.dim:
-            self.index = faiss.read_index(str(FAISS_INDEX_PATH))
-            logger.info(f"✅ Loaded FAISS index with dim={self.dim}, total vectors={self.index.ntotal}")
-        else:
-            logger.info("ℹ️ No existing FAISS index found. A new one will be created on first insert.")
+            if FAISS_INDEX_PATH.exists() and self.dim:
+                self.index = faiss.read_index(str(FAISS_INDEX_PATH))
+                logger.info(
+                    f"✅ Loaded FAISS index with dim={self.dim}, total vectors={self.index.ntotal}"
+                )
+            else:
+                logger.info("ℹ️ No existing FAISS index found. Will create a new one on first insert.")
+        except Exception as e:
+            logger.error(f"❌ Failed to load FAISS index or metadata: {e}")
+            self.metadata = {}
+            self.index = None
+            self.dim = None
 
     def _persist_metadata(self):
-        """Persist metadata dictionary to JSON file."""
-        meta_copy = dict(self.metadata)
+        """Persist metadata dictionary to JSON file (JSON-safe)."""
+        meta_copy = {}
+        for k, v in self.metadata.items():
+            if isinstance(v, dict):
+                safe_meta = {}
+                for key, val in v.items():
+                    if isinstance(val, (np.integer, np.floating)):
+                        val = val.item()
+                    elif isinstance(val, (np.ndarray, list)):
+                        continue  # skip raw embeddings
+                    safe_meta[key] = val
+                meta_copy[k] = safe_meta
         if self.dim:
             meta_copy["_dim"] = self.dim
         with open(METADATA_PATH, "w", encoding="utf-8") as f:
@@ -66,102 +84,86 @@ class VectorService:
             self.index = faiss.IndexFlatL2(dim)
             self.dim = dim
 
-    def add_embeddings(
-        self,
-        embeddings: List[List[float]],
-        metadatas: List[Dict]
-    ) -> List[int]:
-        """
-        Add new embeddings to FAISS index with metadata.
-
-        Args:
-            embeddings (List[List[float]]): List of embeddings.
-            metadatas (List[Dict]): List of associated metadata.
-        Returns:
-            List[int]: List of assigned vector IDs.
-        """
+    def add_embeddings(self, embeddings: List[List[float]], metadatas: List[Dict]) -> List[int]:
+        """Add new embeddings to FAISS index with metadata."""
         if not embeddings:
             raise ValueError("No embeddings to add to FAISS index.")
 
         embs = np.array(embeddings, dtype="float32")
         dim = embs.shape[1]
-
         self._ensure_index(dim)
 
-        if dim != self.dim:
-            raise ValueError(f"❌ Embedding dimension mismatch: FAISS({self.dim}) vs OpenAI({dim})")
+        if self.dim != dim:
+            raise ValueError(f"❌ Embedding dimension mismatch: FAISS({self.dim}) vs embeddings({dim})")
 
         start_id = int(self.index.ntotal)
         self.index.add(embs)
 
-        # Add metadata for each vector
+        # Store metadata for each vector
         for i, meta in enumerate(metadatas):
             vid = str(start_id + i)
+            meta = dict(meta)
             meta["embedding_dim"] = dim
             self.metadata[vid] = meta
 
         self._save_index()
         self._persist_metadata()
 
-        logger.info(f"✅ Added {len(embeddings)} vectors to FAISS index. Total = {self.index.ntotal}")
+        logger.info(f"✅ Added {len(embeddings)} vectors. Total vectors now: {self.index.ntotal}")
         return list(range(start_id, start_id + len(embeddings)))
 
     def search(self, query: str, top_k: int = 4) -> List[Dict]:
-        """
-        Perform similarity search using the given query text.
-
-        Args:
-            query (str): Search query text.
-            top_k (int): Number of results to return.
-        Returns:
-            List[Dict]: Top matching chunks with metadata and distance.
-        """
-        if self.index is None:
-            raise ValueError("FAISS index is empty. No documents available for search.")
+        """Perform similarity search for a given text query."""
+        if self.index is None or self.index.ntotal == 0:
+            raise ValueError("FAISS index is empty. Upload documents first.")
 
         query_emb = np.array([get_single_embedding(query)], dtype="float32")
-
         if query_emb.shape[1] != self.dim:
             raise ValueError(f"❌ Query embedding dimension mismatch: {query_emb.shape[1]} vs index {self.dim}")
 
         distances, indices = self.index.search(query_emb, top_k)
-
         results = []
         for dist, idx in zip(distances[0], indices[0]):
-            if str(idx) in self.metadata:
-                meta = self.metadata[str(idx)]
-                results.append({
-                    "vector_id": idx,
+            meta = self.metadata.get(str(idx))
+            if not meta:
+                continue
+            results.append(
+                {
+                    "vector_id": int(idx),
                     "distance": float(dist),
                     "text": meta.get("text", ""),
                     "doc_id": meta.get("doc_id"),
                     "source": meta.get("source"),
-                    "chunk_id": meta.get("chunk_id")
-                })
-
+                    "chunk_id": meta.get("chunk_id"),
+                }
+            )
         logger.info(f"🔍 Retrieved {len(results)} results for query.")
         return results
 
     def list_documents(self) -> List[Dict]:
-        """List all unique documents stored in the index."""
-        docs = {}
+        """Return JSON-safe summary of all indexed documents."""
+        docs: Dict[str, Dict] = {}
         for meta in self.metadata.values():
-            doc_id = meta.get("doc_id")
+            if not isinstance(meta, dict):
+                continue
+            doc_id = str(meta.get("doc_id")) if meta.get("doc_id") else None
             if not doc_id:
                 continue
-            docs.setdefault(doc_id, {"doc_id": doc_id, "source": meta.get("source"), "chunks": 0})
+            src = str(meta.get("source", "unknown"))
+            docs.setdefault(doc_id, {"doc_id": doc_id, "source": src, "chunks": 0})
             docs[doc_id]["chunks"] += 1
 
-        return list(docs.values())
+        result = list(docs.values())
+        logger.info(f"📚 list_documents -> {len(result)} docs found")
+        return result
 
     def delete_document(self, doc_id: str) -> bool:
-        """
-        Delete a document and rebuild FAISS index without its embeddings.
-        """
+        """Delete a document and rebuild FAISS index without its embeddings."""
         remaining = []
-        new_meta = {}
-        for vid, meta in self.metadata.items():
-            if meta.get("doc_id") != doc_id and not vid.startswith("_"):
+        for meta in self.metadata.values():
+            if not isinstance(meta, dict):
+                continue
+            if meta.get("doc_id") != doc_id:
                 remaining.append(meta)
 
         if len(remaining) == len(self.metadata):
@@ -180,13 +182,17 @@ class VectorService:
             logger.info("🧹 All documents removed. FAISS index reset.")
             return True
 
-        # Rebuild index
-        all_embeddings = [meta["embedding"] for meta in remaining]
-        dim = len(all_embeddings[0])
-        self.index = faiss.IndexFlatL2(dim)
-        arr = np.array(all_embeddings, dtype="float32")
-        self.index.add(arr)
+        # Rebuild FAISS
+        embeddings = [np.array(m["embedding"], dtype="float32") for m in remaining if "embedding" in m]
+        if not embeddings:
+            logger.error("❌ No valid embeddings found during rebuild.")
+            return False
 
+        dim = len(embeddings[0])
+        self.index = faiss.IndexFlatL2(dim)
+        self.index.add(np.vstack(embeddings))
+
+        new_meta = {}
         for i, meta in enumerate(remaining):
             new_meta[str(i)] = meta
 
@@ -195,5 +201,5 @@ class VectorService:
         self._save_index()
         self._persist_metadata()
 
-        logger.info(f"🗑️ Deleted document {doc_id}. Rebuilt index with {self.index.ntotal} vectors remaining.")
+        logger.info(f"🗑️ Deleted doc_id={doc_id}. Rebuilt index with {self.index.ntotal} vectors.")
         return True
