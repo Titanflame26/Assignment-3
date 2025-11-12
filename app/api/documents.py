@@ -8,7 +8,7 @@ Endpoints for managing indexed documents:
 
 import logging
 from fastapi import APIRouter, HTTPException
-from services.vector_service import VectorService
+from app.services.vector_service import VectorService
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
