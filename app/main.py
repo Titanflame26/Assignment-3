@@ -9,7 +9,7 @@ import logging
 from fastapi import FastAPI
 from app.core.logging import configure_logging
 from app.core.config import APP_NAME, ENVIRONMENT
-from api import upload, query, documents
+from app.api import upload, query, documents
 
 # Initialize logging
 configure_logging()
