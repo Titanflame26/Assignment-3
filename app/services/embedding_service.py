@@ -8,7 +8,7 @@ Supports batch processing for better performance.
 import logging
 from typing import List
 from openai import OpenAI
-from core.config import OPENAI_API_KEY, EMBEDDING_MODEL
+from app.core.config import OPENAI_API_KEY, EMBEDDING_MODEL
 
 logger = logging.getLogger(__name__)
 
