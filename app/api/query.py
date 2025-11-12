@@ -12,7 +12,7 @@ from fastapi import APIRouter, HTTPException, Query
 from app.services.vector_service import VectorService
 from app.services.llm_service import generate_answer
 from app.services.embedding_service import get_single_embedding
-from core.config import TOP_K
+from app.core.config import TOP_K
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
