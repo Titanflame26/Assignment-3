@@ -11,8 +11,8 @@ import os
 import tempfile
 import logging
 from fastapi import APIRouter, UploadFile, File, HTTPException
-from services.file_readers import read_file
-from services.docs_service import process_document
+from app.services.file_readers import read_file
+from app.services.docs_service import process_document
 
 logger = logging.getLogger(__name__)
 router = APIRouter()

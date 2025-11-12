@@ -14,6 +14,11 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 load_dotenv(BASE_DIR / ".env")
 
+
+APP_NAME = os.getenv("APP_NAME", "RAG Document QA System")
+ENVIRONMENT = os.getenv("ENVIRONMENT", "development")
+DEBUG = ENVIRONMENT.lower() == "development"
+
 # -------------------------------
 # Embedding Config (OpenAI)
 # -------------------------------
