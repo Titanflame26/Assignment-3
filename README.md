@@ -35,8 +35,8 @@ app/
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/your-username/rag-fastapi.git
-cd rag-fastapi
+git clone git@github.com:Titanflame26/Assignment-3.git
+
 
 2️⃣ Create a virtual environment
 
