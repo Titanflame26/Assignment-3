@@ -8,9 +8,9 @@ Handles:
 
 import logging
 from typing import List, Dict
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from services.embedding_service import get_embeddings
-from core.config import CHUNK_SIZE, CHUNK_OVERLAP
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from app.services.embedding_service import get_embeddings
+from app.core.config import CHUNK_SIZE, CHUNK_OVERLAP
 
 logger = logging.getLogger(__name__)
 
