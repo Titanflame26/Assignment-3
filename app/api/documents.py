@@ -5,8 +5,8 @@ List and delete indexed documents.
 
 import logging
 from fastapi import APIRouter, HTTPException
-from services.vector_service import VectorService
-from models.schemas import DocumentListResponse, DocumentDeleteResponse
+from app.services.vector_service import VectorService
+from app.models.schemas import DocumentListResponse, DocumentDeleteResponse
 
 logger = logging.getLogger(__name__)
 router = APIRouter()

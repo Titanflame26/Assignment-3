@@ -5,10 +5,10 @@ Handles question answering from indexed documents.
 
 import logging
 from fastapi import APIRouter, HTTPException, Query
-from services.vector_service import VectorService
-from services.llm_service import generate_answer
-from models.schemas import QueryResponse, SearchResult
-from core.config import TOP_K
+from app.services.vector_service import VectorService
+from app.services.llm_service import generate_answer
+from app.models.schemas import QueryResponse, SearchResult
+from app.core.config import TOP_K
 
 logger = logging.getLogger(__name__)
 router = APIRouter()

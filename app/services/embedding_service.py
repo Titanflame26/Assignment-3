@@ -11,7 +11,7 @@ from typing import List
 import numpy as np
 from openai import OpenAI, RateLimitError, APIError
 from ollama import Client as OllamaClient
-from core.config import OPENAI_API_KEY, EMBEDDING_MODEL, OLLAMA_BASE_URL
+from app.core.config import OPENAI_API_KEY, EMBEDDING_MODEL, OLLAMA_BASE_URL
 
 logger = logging.getLogger(__name__)
 
